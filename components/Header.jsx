@@ -4,7 +4,7 @@ import Image from "next/image";
 import Home from "../public/home.svg";
 const Header = () => {
   return (
-    <div className="shadow-sm shadow-[#E90074] p-4 flex flex-row justify-between items-center ">
+    <div className="shadow-sm shadow-[#407bff] p-4 flex flex-row justify-between items-center ">
       <h1 className="pl-4 text-xl lg:text-2xl quicksand">CAMPUSX</h1>
       <nav>
         <ul className="flex space-x-4 font-light">
