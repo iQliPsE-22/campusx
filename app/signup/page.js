@@ -1,9 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import loginimg from "../../public/Nerd-rafiki.svg";
+import signupimg from "../../public/signup.svg";
 import Image from "next/image";
 import CustomButton from "./../../components/CustomButton";
 import Link from "next/link";
+
 const Page = () => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -20,7 +21,7 @@ const Page = () => {
       <section className="bg-black h-full flex flex-col lg:flex-row items-center justify-around pt-0 p-12">
         <div className="w-full lg:w-1/2 flex justify-center p-8">
           <Image
-            src={loginimg}
+            src={signupimg}
             alt="Writer"
             width="50"
             height="50"
@@ -28,8 +29,22 @@ const Page = () => {
           />
         </div>
         <form className="bg-[#262626] w-full h-full lg:w-1/2 lg:text-left p-8 space-y-4 rounded-lg">
-          <h2 className="julius text-white text-xl text-center ">LOGIN</h2>
+          <h2 className="julius text-white text-xl text-center ">SIGN UP</h2>
           <div className="space-y-4">
+            <div>
+              <label
+                htmlFor="Full Name"
+                className="block text-sm font-medium text-white"
+              >
+                Email
+              </label>
+              <input
+                type="text"
+                id="name"
+                className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                placeholder="Enter your Full Name"
+              />
+            </div>
             <div>
               <label
                 htmlFor="email"
@@ -68,18 +83,34 @@ const Page = () => {
               </div>
             </div>
             <div>
+              <label
+                htmlFor="confirm-password"
+                className="block text-sm font-medium text-white"
+              >
+                Confirm Password
+              </label>
+              <div className="relative mt-2">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  id="confirm-password"
+                  className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  placeholder="Confirm your password"
+                />
+              </div>
+            </div>
+            <div>
               <CustomButton
                 type="submit"
                 className="w-full"
-                text="Login"
+                text="Sign Up"
                 color="bg-blue-600"
               />
             </div>
             <div>
               <p className="text-slate-700 text-md leading-relaxed">
-                Don&apos;t have an Account?{" "}
-                <Link href="/signup">
-                  <span className="text-[#407bff] cursor-pointer">Sign up</span>
+                Already have an Account?{" "}
+                <Link href="/login">
+                  <span className="text-[#407bff] cursor-pointer">Login</span>
                 </Link>
               </p>
             </div>
