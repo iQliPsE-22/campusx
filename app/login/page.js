@@ -4,87 +4,88 @@ import loginimg from "../../public/Nerd-rafiki.svg";
 import Image from "next/image";
 import CustomButton from "./../../components/CustomButton";
 import Link from "next/link";
+import Headline from "./../../components/Headline";
+import { motion } from "framer-motion";
+
 const Page = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
     <>
-      <div className="bg-black p-8">
-        <h1 className="julius text-white text-center text-4xl">
-          CAMPUSX MARKETPLACE
-        </h1>
-        <p className="quicksand text-[#71717a] text-center text-lg">
-          Everything you need, is right here!
-        </p>
-      </div>
-      <section className="bg-black h-full flex flex-col lg:flex-row items-center justify-around pt-0 p-12">
-        <div className="w-full lg:w-1/2 flex justify-center p-8">
-          <Image
-            src={loginimg}
-            alt="Writer"
-            width="50"
-            height="50"
-            className="w-3/4 lg:w-full rounded-lg"
-          />
-        </div>
-        <form className="bg-[#262626] w-full h-full lg:w-1/2 lg:text-left p-8 space-y-4 rounded-lg">
-          <h2 className="julius text-white text-xl text-center ">LOGIN</h2>
-          <div className="space-y-4">
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-white"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                placeholder="Enter your email"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="password"
-                className="block text-sm font-medium text-white"
-              >
-                Password
-              </label>
-              <div className="relative mt-2">
-                <input
-                  type={showPassword ? "text" : "password"}
-                  id="password"
-                  className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                  placeholder="Enter your password"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-blue-600"
+      <section className="bg-black h-full pt-8 p-4 lg:p-12 min-h-dvh">
+        <Headline />
+        <div className="flex flex-col lg:flex-row items-center justify-around">
+          <div className="w-11/12 lg:w-1/2 flex justify-center p-2 lg:p-8 ">
+            <Image
+              src={loginimg}
+              alt="Writer"
+              width="50"
+              height="50"
+              className="w-3/4 lg:w-full rounded-lg"
+            />
+          </div>
+
+          <form className="bg-[#262626] w-full h-full lg:w-1/2 lg:text-left p-4 pt-8 lg:p-8 space-y-4 rounded-lg">
+            <h2 className="julius text-white text-xl text-center ">LOGIN</h2>
+            <div className="space-y-4">
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-white"
                 >
-                  {showPassword ? "Hide" : "Show"}
-                </button>
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  placeholder="Enter your email"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-white"
+                >
+                  Password
+                </label>
+                <div className="relative mt-2">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    id="password"
+                    className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    placeholder="Enter your password"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-blue-600"
+                  >
+                    {showPassword ? "Hide" : "Show"}
+                  </button>
+                </div>
+              </div>
+              <div>
+                <CustomButton
+                  type="submit"
+                  className="w-full"
+                  text="Login"
+                  color="bg-blue-600"
+                />
+              </div>
+              <div>
+                <p className="text-slate-700 text-md leading-relaxed">
+                  Don&apos;t have an Account?{" "}
+                  <Link href="/signup">
+                    <span className="text-[#407bff] cursor-pointer">
+                      Sign up
+                    </span>
+                  </Link>
+                </p>
               </div>
             </div>
-            <div>
-              <CustomButton
-                type="submit"
-                className="w-full"
-                text="Login"
-                color="bg-blue-600"
-              />
-            </div>
-            <div>
-              <p className="text-slate-700 text-md leading-relaxed">
-                Don&apos;t have an Account?{" "}
-                <Link href="/signup">
-                  <span className="text-[#407bff] cursor-pointer">Sign up</span>
-                </Link>
-              </p>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </section>
     </>
   );

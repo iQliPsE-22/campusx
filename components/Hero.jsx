@@ -13,6 +13,9 @@ import Developer from "../public/Developer.svg";
 import { motion, useScroll } from "framer-motion";
 
 import CustomButton from "./CustomButton";
+import Headline from "./Headline";
+import HopBtn from './HopBtn';
+
 
 const Hero = () => {
   const { scrollYProgress } = useScroll();
@@ -23,29 +26,20 @@ const Hero = () => {
         style={{ scaleX: scrollYProgress }}
       />
       {/* Hero section starts */}
-      <section className="hero-container min-h-dvh">
-        <div className="bg-black p-8">
-          <div>
-            <h1 className="julius text-white text-center text-4xl">
-              CAMPUSX MARKETPLACE
-            </h1>
-            <p className="quicksand text-[#71717a] text-center text-lg">
-              Everything you need, is right here!
-            </p>
-          </div>
-          <div className="poppins font-light flex items-center justify-center gap-8 mt-8 ">
-            <Button className="inter p-4 pl-6 pr-6">EXPLORE</Button>
-          </div>
-          <div className="flex items-center justify-center ">
-            <Image src={campus} alt="Heroimg" className="w-full lg:w-1/2 " />
-          </div>
-        </div>
+      <section className="hero-container min-h-dvh w-full p-8 bg-black flex flex-col items-center">
+        <Headline />
+        <HopBtn/>
+        <Image src={campus} alt="Heroimg" className="w-full lg:w-1/2" />
       </section>
       <hr className="border-white border-2" />
 
+
+
       {/* Hire a writer */}
+
+
       <section className="flex flex-col lg:flex-row items-center justify-around p-12 rounded-lg shadow-lg">
-        <div className="w-full lg:w-1/2 flex justify-center lg:justify-start p-8">
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-start pt-4 p-8">
           <Image
             src={Writer}
             alt="Writer"
@@ -70,7 +64,6 @@ const Hero = () => {
         </div>
       </section>
       <hr className="border-white border-2" />
-
       {/* Buy & Sell things */}
       <section className="flex flex-col lg:flex-row items-center justify-around p-12 rounded-lg shadow-lg">
         <div className="w-full lg:w-1/2 text-center lg:text-left px-8 space-y-4">
@@ -98,7 +91,6 @@ const Hero = () => {
         </div>
       </section>
       <hr className="border-white border-2" />
-
       {/* Learn from peers */}
       <section className="min-h-dvh flex flex-col lg:flex-row items-center justify-around p-12 rounded-lg shadow-lg">
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-start p-8">
