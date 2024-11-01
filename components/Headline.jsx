@@ -2,7 +2,7 @@ import React from "react";
 
 const Headline = () => {
   return (
-    <div className = "bg-black p-4 pb-0">
+    <div className = "bg-black p-2 lg:p-4 pb-0">
       <h1 className="julius text-white text-center text-3xl lg:text-4xl">
         CAMPUSX MARKETPLACE
       </h1>
