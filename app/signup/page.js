@@ -12,10 +12,10 @@ const Page = () => {
   return (
     <>
       <section className="bg-black h-full pt-8 p-4 lg:p-12 min-h-dvh">
-      <Headline />
+        <Headline />
         <div className="flex flex-col lg:flex-row items-center justify-around ">
-        <div className="w-11/12 lg:w-1/2 flex justify-center p-2 lg:p-8 ">
-        <Image
+          <div className="w-4/5 lg:w-1/2 flex justify-center p-2 lg:p-8 ">
+            <Image
               src={signupimg}
               alt="Writer"
               width="50"
