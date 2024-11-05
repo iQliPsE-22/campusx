@@ -13,7 +13,7 @@ const handleExploreClick = () => {
 const HopBtn = () => {
   return (
     <div
-      className="arrow mt-4 h-20 w-20 bg-transparent rounded-full flex items-center justify-center text-white border-2 border-white cursor-pointer hover:border-[#407bff]"
+      className="z-0 arrow mt-4 h-20 w-20 bg-transparent rounded-full flex items-center justify-center text-white border-2 border-white cursor-pointer hover:border-[#407bff]"
       onClick={handleExploreClick}
     >
       <Image src={arrowDown} alt="scroll down" width="40" height="40" />

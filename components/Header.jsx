@@ -1,12 +1,15 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Home from "../public/home.svg";
 const Header = () => {
   return (
-    <div className="inter shadow-sm shadow-[#407bff] p-4 flex flex-row justify-between items-center ">
-      <h1 className="pl-4 text-xl lg:text-2xl quicksand">CAMPUSX</h1>
-      <nav>
+    <div className="inter shadow-sm shadow-[#407bff] p-4 flex flex-row lg:justify-between justify-center items-center ">
+      <h1 className="pl-4 text-xl text-center lg:text-2xl quicksand">
+        CAMPUSX
+      </h1>
+      <nav className="hidden lg:block">
         <ul className="flex space-x-4 font-light">
           <li>
             <Link href="/" className="hover:text-[#E90074]">
