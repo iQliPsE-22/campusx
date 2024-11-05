@@ -25,7 +25,7 @@ const Hero = () => {
         style={{ scaleX: scrollYProgress }}
       />
       {/* Hero section starts */}
-      <section className="hero-container min-h-dvh w-full p-8 bg-black flex flex-col items-center">
+      <section className="mt-4 hero-container min-h-dvh w-full p-8 bg-black flex flex-col items-center">
         <Headline />
         <HopBtn />
         <Image src={campus} alt="Heroimg" className="w-full lg:w-1/2" />

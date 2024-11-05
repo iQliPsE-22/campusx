@@ -4,7 +4,7 @@ import Link from "next/link";
 const Navbar = () => {
   return (
     <nav>
-      <ul className="hidden lg:flex flex-row justify-around font-light shadow-lg shadow-[#407bff]">
+      <ul className="hidden lg:flex flex-row justify-around font-light shadow-sm shadow-[#407bff]">
         <li className="shadow w-full text-center p-2 cursor-pointer hover:shadow-[#2d56b3] hover:text-[#2d56b3]">
           <Link href="/">Men</Link>
         </li>
