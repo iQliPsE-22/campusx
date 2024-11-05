@@ -34,7 +34,7 @@ const Hero = () => {
 
       {/* Hire a writer */}
 
-      <section className="min-h-dvh flex flex-col lg:flex-row items-center justify-around p-12 rounded-lg shadow-lg">
+      <section className="min-h-dvh flex flex-col lg:flex-row items-center justify-center lg:justify-around p-12 rounded-lg shadow-lg">
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-start pt-4 p-8">
           <Image
             src={Writer}
@@ -44,7 +44,7 @@ const Hero = () => {
             className="w-full rounded-lg shadow-md"
           />
         </div>
-        <div className="w-full lg:w-1/2 text-center lg:text-left px-4 lg:px-8 space-y-4 text-justify ">
+        <div className="w-full lg:w-1/2 text-center lg:text-left px-4 lg:px-8 space-y-4  ">
           <h2 className="quicksand text-2xl font-bold text-blue-600">
             Ace Your Assignments with Expert Help!
           </h2>
@@ -61,8 +61,8 @@ const Hero = () => {
       </section>
       <hr className="border-white border-2" />
       {/* Buy & Sell things */}
-      <section className="min-h-dvh flex flex-col lg:flex-row items-center justify-around p-12 rounded-lg shadow-lg">
-        <div className="w-full lg:w-1/2 text-center lg:text-left px-4 lg:px-8 space-y-4 text-justify ">
+      <section className="min-h-dvh flex flex-col lg:flex-row items-center justify-center  lg:justify-around p-12 rounded-lg shadow-lg">
+        <div className="w-full lg:w-1/2 text-center lg:text-left px-4 lg:px-8 space-y-4  ">
           <h2 className="quicksand text-2xl font-bold text-blue-600">
             Buy or Sell, Anytime!
           </h2>
@@ -88,7 +88,7 @@ const Hero = () => {
       </section>
       <hr className="border-white border-2" />
       {/* Learn from peers */}
-      <section className="min-h-dvh  flex flex-col lg:flex-row items-center justify-around p-12 rounded-lg shadow-lg">
+      <section className="min-h-dvh  flex flex-col lg:flex-row items-center justify-center  lg:justify-around p-12 rounded-lg shadow-lg">
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-start p-8">
           <Image
             src={Developer}
@@ -98,7 +98,7 @@ const Hero = () => {
             className="w-full rounded-lg shadow-md"
           />
         </div>
-        <div className="w-full lg:w-1/2 text-center lg:text-left px-4 lg:px-8 space-y-4 text-justify ">
+        <div className="w-full lg:w-1/2 text-center lg:text-left px-4 lg:px-8 space-y-4  ">
           <h2 className="quicksand text-2xl font-bold text-blue-600">
             Learn from Experienced Seniors!
           </h2>
