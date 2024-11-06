@@ -12,9 +12,9 @@ const Page = () => {
 
   return (
     <>
-      <section className="bg-black h-full pt-8 p-4 lg:p-12 min-h-dvh">
+      <section className="bg-black h-full pt-8 p-4 pb-8 lg:p-12 min-h-dvh">
         <Headline />
-        <div className="min-h-dvh flex flex-col lg:flex-row items-center justify-center lg:justify-around">
+        <div className="min-h-dvh flex flex-col lg:flex-row items-center justify-start lg:justify-around">
           <div className="w-4/5 lg:w-1/2 flex justify-center p-2 lg:p-8 ">
             <Image
               src={loginimg}
@@ -25,7 +25,7 @@ const Page = () => {
             />
           </div>
 
-          <form className="bg-[#262626] w-full h-full lg:w-1/2 lg:text-left p-4 pt-8 lg:p-8 space-y-4 rounded-lg">
+          <form className="inter text-sm lg:text-md bg-[#262626] w-full h-full lg:w-1/2 lg:text-left p-4 pt-8 lg:p-8 space-y-4 rounded-lg">
             <h2 className="julius text-white text-xl text-center ">LOGIN</h2>
             <div className="space-y-4">
               <div>
@@ -38,7 +38,7 @@ const Page = () => {
                 <input
                   type="email"
                   id="email"
-                  className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="outline-none mt-1 block w-full p-2 text-sm lg:text-md border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   placeholder="Enter your email"
                 />
               </div>
@@ -53,7 +53,7 @@ const Page = () => {
                   <input
                     type={showPassword ? "text" : "password"}
                     id="password"
-                    className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="outline-none text-sm lg:text-md mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     placeholder="Enter your password"
                   />
                   <button
@@ -65,15 +65,13 @@ const Page = () => {
                   </button>
                 </div>
               </div>
-              <div>
-                <CustomButton
-                  type="submit"
-                  className="w-full"
-                  text="Login"
-                  color="bg-blue-600"
-                />
-              </div>
-              <div>
+              <CustomButton
+                type="submit"
+                className="w-full"
+                text="Login"
+                color="bg-blue-600"
+              />
+              <div className="text-sm">
                 <p className="text-slate-700 text-md leading-relaxed">
                   Don&apos;t have an Account?{" "}
                   <Link href="/signup">

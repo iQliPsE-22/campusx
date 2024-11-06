@@ -11,7 +11,7 @@ const Page = () => {
 
   return (
     <>
-      <section className="bg-black h-full pt-8 p-4 lg:p-12 min-h-dvh">
+      <section className="bg-black h-full pt-8 p-4 pb-8 lg:p-12 min-h-dvh">
         <Headline />
         <div className="min-h-dvh flex flex-col lg:flex-row items-center justify-center lg:justify-around">
           <div className="w-4/5 lg:w-1/2 flex justify-center p-2 lg:p-8 ">
@@ -23,7 +23,7 @@ const Page = () => {
               className="w-3/4 lg:w-full rounded-lg"
             />
           </div>
-          <form className="bg-[#262626] w-full h-full lg:w-1/2 lg:text-left p-4 pt-8 lg:p-8 space-y-4 rounded-lg">
+          <form className="inter text-sm lg:text-md bg-[#262626] w-full h-full lg:w-1/2 lg:text-left p-4 pt-8 lg:p-8 space-y-4 rounded-lg">
             <h2 className="julius text-white text-xl text-center ">SIGN UP</h2>
             <div className="space-y-4">
               <div>
@@ -101,7 +101,7 @@ const Page = () => {
                   color="bg-blue-600"
                 />
               </div>
-              <div>
+              <div className="text-sm">
                 <p className="text-slate-700 text-md leading-relaxed">
                   Already have an Account?{" "}
                   <Link href="/login">

@@ -78,11 +78,15 @@
   font-style: normal;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   display: none;
 }
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
   40% {
@@ -99,6 +103,9 @@
 
 .arrow:hover {
   animation: none;
+}
+input {
+  outline: none;
 }
 @layer base {
   * {
