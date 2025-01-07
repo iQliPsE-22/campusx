@@ -5,7 +5,7 @@ import Image from "next/image";
 import Home from "../public/home.svg";
 const Header = () => {
   return (
-    <div className="inter shadow-sm shadow-[#407bff] p-4 flex flex-row lg:justify-between justify-center items-center ">
+    <div className="inter bg-black mb-[0.1rem] text-white shadow-sm shadow-[#407bff] p-4 flex flex-row lg:justify-between justify-center items-center ">
       <h1 className="pl-4 text-xl text-center lg:text-2xl quicksand">
         CAMPUSX
       </h1>

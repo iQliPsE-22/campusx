@@ -11,8 +11,8 @@ const Page = () => {
 
   return (
     <>
-      <section className="bg-black h-full pt-8 p-4 pb-8 lg:p-12 min-h-dvh">
-        <Headline />
+      <section className="bg-black h-full pt-8 p-4 pb-8 lg:p-8 min-h-dvh">
+      <Headline />
         <div className="min-h-dvh flex flex-col lg:flex-row items-center justify-center lg:justify-around">
           <div className="w-4/5 lg:w-1/2 flex justify-center p-2 lg:p-8 ">
             <Image
