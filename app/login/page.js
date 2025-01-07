@@ -5,7 +5,6 @@ import Image from "next/image";
 import CustomButton from "./../../components/CustomButton";
 import Link from "next/link";
 import Headline from "./../../components/Headline";
-import { motion } from "framer-motion";
 
 const Page = () => {
   const [showPassword, setShowPassword] = useState(false);
