@@ -6,18 +6,18 @@ const Category = ({ img_src, category_name }) => {
 
   return (
     <div
-      className="relative w-1/4 bg-white cursor-pointer overflow-hidden"
+      className="lg:relative w-1/4 flex justify-center cursor-pointer overflow-hidden"
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
     >
       <Image
         src={img_src}
         alt="men"
-        className="block w-full h-full object-cover"
+        className="block w-3/4 lg:w-full object-top aspect-square lg:aspect-auto rounded-full lg:rounded lg:w-full h-full object-cover"
         // loading="lazy"
       />
       <div
-        className={`absolute bottom-0 left-0 w-full bg-[#000] opacity-90 text-white text-center p-3 transition-transform duration-300 ${
+        className={`hidden lg:block absolute bottom-0 left-0 w-full bg-[#000] opacity-90 text-white text-center p-3 transition-transform duration-300 ${
           show ? "translate-y-0" : "translate-y-full"
         }`}
       >

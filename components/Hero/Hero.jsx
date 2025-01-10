@@ -32,10 +32,6 @@ const Hero = () => {
 
   return (
     <>
-      <motion.div
-        className="progress-bar"
-        style={{ scaleX: scrollYProgress }}
-      />
       {/* Hero section starts */}
 
       <section className="text-sm lg:text-md hero-container min-h-dvh w-full p-8 bg-black flex flex-col items-center">
