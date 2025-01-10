@@ -20,7 +20,7 @@ const page = () => {
           </span>
         </h3>
       </div>
-      <div className="mt-4 w-full flex flex-row justify-around gap-2">
+      <div className="mt-8 lg:mt-4 p-8 w-full flex flex-row justify-center lg:justify-around gap-2">
         <Category img_src={expert_img} category_name={"Hire a Expert"} />
         <Category img_src={developer_img} category_name={"Need a Developer?"} />
         <Category img_src={project_img} category_name={"Buy Projects"} />
