@@ -6,7 +6,7 @@ import vehicle_img from "../../public/vehicle.jpg";
 import electronic_img from "../../public/electronics.jpg";
 const page = () => {
   return (
-    <section className="bg-black text-white h-full pt-8 p-4 pb-8 lg:p-8 min-h-dvh">
+    <section className="bg-black text-white h-full pt-2 lg:pt-8 p-4 pb-8 lg:p-8 min-h-dvh">
       <Headline
         text="Rent bikes, rooms, and more—campus life made easy!"
         heading="CAMPUSX RENTAL"

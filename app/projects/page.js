@@ -7,7 +7,7 @@ import developer_img from "../../public/developer.jpg";
 import project_img from "../../public/project.jpg";
 const page = () => {
   return (
-    <section className="bg-black text-white h-full pt-8 p-4 pb-8 lg:p-8 min-h-dvh">
+    <section className="bg-black text-white h-full pt-2 lg:pt-8 p-4 pb-8 lg:p-8 min-h-dvh">
       <Headline
         text="Get your projects done right - hire experts, ace your assignments!"
         heading="CAMPUSX ASSIGNMENTS"

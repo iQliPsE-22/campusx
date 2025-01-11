@@ -22,7 +22,7 @@ const Hero = () => {
     <>
       {/* Hero section starts */}
 
-      <section className="text-sm lg:text-md hero-container min-h-dvh w-full p-8 bg-black flex flex-col items-center">
+      <section className="text-sm lg:text-md hero-container min-h-dvh w-full pt-2 p-8 lg:p-8 bg-black flex flex-col items-center">
         <Headline
           heading={"CAMPUSX MARKETPLACE"}
           text={"Everything you need, is right here!"}
