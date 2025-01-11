@@ -32,17 +32,17 @@ const ResNavbar = () => {
             <div className="itim fancy-border absolute bottom-[3.5rem] bg-black opacity-90 text-white w-40 shadow-lg p-8 ">
               <ul className="flex flex-col items-start p-2 space-y-1 font-light">
                 <li>
-                  <Link href="/category/electronics" className="hover:text-[#E90074]">
+                  <Link href="/trading" className="hover:text-[#E90074]">
                     Trading
                   </Link>
                 </li>
                 <li>
-                  <Link href="/category/fashion" className="hover:text-[#E90074]">
+                  <Link href="/rental" className="hover:text-[#E90074]">
                     Rental
                   </Link>
                 </li>
                 <li>
-                  <Link href="/category/sports" className="hover:text-[#E90074]">
+                  <Link href="/projects" className="hover:text-[#E90074]">
                     Projects & Assignment
                   </Link>
                 </li>
