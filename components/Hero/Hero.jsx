@@ -18,25 +18,13 @@ import CustomButton from "./../CustomButton";
 import Hero_Block from "./Hero_Block";
 
 const Hero = () => {
-  const { scrollYProgress } = useScroll();
-  const arr = ["TRADING", "WRITING", "RENTAL", "LEARNING"];
-  const [headline, setHeadline] = React.useState("");
-
-  useEffect(() => {
-    setHeadline(arr[Math.floor(Math.random() * arr.length)]);
-    const interval = setInterval(() => {
-      setHeadline(arr[Math.floor(Math.random() * arr.length)]);
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <>
       {/* Hero section starts */}
 
       <section className="text-sm lg:text-md hero-container min-h-dvh w-full p-8 bg-black flex flex-col items-center">
         <Headline
-          heading={`CAMPUSX ${headline || "MARKETPLACE"}`}
+          heading={"CAMPUSX MARKETPLACE"}
           text={"Everything you need, is right here!"}
         />
         <HopBtn />

@@ -107,6 +107,10 @@
 input {
   outline: none;
 }
+
+.fancy-border {
+  border-radius: 10% 10% 100% 0% / 10% 10% 34% 10% ;
+}
 @layer base {
   * {
     @apply border-border;
