@@ -13,7 +13,7 @@ const page = () => {
         heading="CAMPUSX ASSIGNMENTS"
       />
       <div className="text-center tracking-wide">
-        <h3 className="font-light">
+        <h3 className="font-light text-sm lg:text-lg">
           Are you an Expert?{" "}
           <span className="text-blue-700 cursor-pointer hover:underline">
             Register Now!

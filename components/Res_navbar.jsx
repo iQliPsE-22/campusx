@@ -10,7 +10,7 @@ const ResNavbar = () => {
 
   return (
     <nav className="lg:hidden w-full fixed bottom-0 p-4 bg-black text-white shadow-inner shadow-lg shadow-[#407bff]">
-      <ul className="flex justify-around items-center space-x-4 text-lg">
+      <ul className="flex justify-around items-center space-x-4 text-xs">
         {/* Home Link */}
         <li className="relative">
           <Link href="/" className="flex flex-col items-center hover:text-[#E90074]">

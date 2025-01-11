@@ -19,7 +19,7 @@ const page = () => {
         heading="CAMPUSX TRADING"
       />
       <div className="text-center tracking-wide">
-        <h3 className="font-light">
+        <h3 className="font-light text-sm lg:text-lg">
           Want to sell Something?{" "}
           <span className="text-blue-700 cursor-pointer hover:underline">
             List it Now!

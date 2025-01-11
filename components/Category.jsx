@@ -27,8 +27,8 @@ const Category = ({ img_src, category_name }) => {
       </div>
 
       {/* for smaller screen */}
-      <div className="block lg:hidden opacity-90 text-white text-sm font-light text-center p-3 transition-transform duration-300">
-        <h2 className="inter text-lg">{category_name}</h2>
+      <div className="block lg:hidden opacity-90 text-white text-xs font-light text-center p-3 transition-transform duration-300">
+        <h2 className="inter">{category_name}</h2>
       </div>
     </div>
   );

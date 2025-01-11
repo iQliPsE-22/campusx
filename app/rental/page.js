@@ -12,7 +12,7 @@ const page = () => {
         heading="CAMPUSX RENTAL"
       />
       <div className="text-center tracking-wide">
-        <h3 className="font-light">
+        <h3 className="font-light text-sm lg:text-lg">
           Make money by renting it out!{" "}
           <span className="text-blue-700 cursor-pointer hover:underline">
             Register Now!
