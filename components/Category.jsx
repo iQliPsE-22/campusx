@@ -13,7 +13,7 @@ const Category = ({ img_src, category_name }) => {
       <Image
         src={img_src}
         alt="men"
-        className="block w-3/4 lg:w-full object-top aspect-square lg:aspect-auto rounded-full lg:rounded lg:w-full h-full object-cover"
+        className="block w-11/12 lg:w-full object-top aspect-square lg:aspect-auto rounded-full lg:rounded lg:w-full h-full object-cover"
         // loading="lazy"
       />
 
