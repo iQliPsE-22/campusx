@@ -2,18 +2,17 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
+import Link from "next/link";
+
 import Header from "./../../components/Header";
 import Headline from "./../../components/Headline";
-import Category from "./../../components/Category";
-
 import men_img from "../../public/men.jpg";
 import women_img from "../../public/women.jpg";
 import electronic_img from "../../public/electronics.jpg";
 import stationary_img from "../../public/stationary.jpg";
-import Item from "./../../components/Item";
-import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
-import Catergory_hightlight from './../../components/Catergory_hightlight';
+import Category from "./../../components/category_items/Category";
+import Category_hightlight from "./../../components/category_items/Category_hightlight";
 
 const page = () => {
   return (
@@ -37,12 +36,10 @@ const page = () => {
         <Category img_src={stationary_img} category_name={"Stationary"} />
       </div>
 
-
-      <Catergory_hightlight category = {"Men"}/>
-      <Catergory_hightlight category = {"Women"}/>
-      <Catergory_hightlight category = {"Electronics"}/>
-      <Catergory_hightlight category = {"Stationary"}/>
-
+      <Category_hightlight category={"Men"} />
+      <Category_hightlight category={"Women"} />
+      <Category_hightlight category={"Electronics"} />
+      <Category_hightlight category={"Stationary"} />
     </section>
   );
 };

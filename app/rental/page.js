@@ -1,9 +1,9 @@
 "use client";
 import Headline from "./../../components/Headline";
-import Category from "./../../components/Category";
 import properites_img from "../../public/properties.jpg";
 import vehicle_img from "../../public/vehicle.jpg";
 import electronic_img from "../../public/electronics.jpg";
+import Category from './../../components/category_items/Category';
 const page = () => {
   return (
     <section className="bg-black text-white h-full pt-2 lg:pt-8 p-4 pb-8 lg:p-8 min-h-dvh">

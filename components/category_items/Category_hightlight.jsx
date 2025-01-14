@@ -1,13 +1,13 @@
 import React from "react";
-import Item from './Item';
 import { FaArrowRight } from 'react-icons/fa6';
 import Link  from 'next/link';
+import Item from './../Item';
 
-const Catergory_hightlight = (props) => {
+const Category_hightlight = (props) => {
   return (
     <div className="pt-4 p-2 mt-4 lg:mt-8 ">
       <div className="w-full flex flex-row justify-between items-center">
-        <h2 className="itim text-center underline font-bold text-lg lg:text-xl">
+        <h2 className="itim text-center underline font-semibold text-lg lg:text-xl">
           From {props.category} Collection
         </h2>
         <Link
@@ -28,4 +28,4 @@ const Catergory_hightlight = (props) => {
 };
 
 
-export default Catergory_hightlight;
+export default Category_hightlight;
