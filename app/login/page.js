@@ -12,7 +12,10 @@ const Page = () => {
   return (
     <>
       <section className="bg-black h-full pt-8 p-4 pb-8 lg:p-8 min-h-dvh">
-        <Headline />
+      <Headline
+          heading={"CAMPUSX MARKETPLACE"}
+          text={"Everything you need, is right here!"}
+        />
         <div className="flex flex-col lg:flex-row items-center justify-start lg:justify-around">
           <div className="w-4/5 lg:w-1/2 flex justify-center p-2 lg:p-4 ">
             <Image

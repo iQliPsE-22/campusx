@@ -10,6 +10,10 @@ import men_img from "../../public/men.jpg";
 import women_img from "../../public/women.jpg";
 import electronic_img from "../../public/electronics.jpg";
 import stationary_img from "../../public/stationary.jpg";
+import Item from "./../../components/Item";
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa6";
+import Catergory_hightlight from './../../components/Catergory_hightlight';
 
 const page = () => {
   return (
@@ -26,15 +30,19 @@ const page = () => {
           </span>
         </h3>
       </div>
-      <div className="mt-8 lg:mt-4 p-2 lg:p-8 w-full flex flex-row justify-between lg:justify-around gap-2">
+      <div className="mt-8 lg:mt-4 p-2 lg:p-8 w-full flex flex-row justify-between lg:justify-around">
         <Category img_src={men_img} category_name={"Men"} />
         <Category img_src={women_img} category_name={"Women"} />
         <Category img_src={electronic_img} category_name={"Electronics"} />
         <Category img_src={stationary_img} category_name={"Stationary"} />
       </div>
-      <div>
-        
-      </div>
+
+
+      <Catergory_hightlight category = {"Men"}/>
+      <Catergory_hightlight category = {"Women"}/>
+      <Catergory_hightlight category = {"Electronics"}/>
+      <Catergory_hightlight category = {"Stationary"}/>
+
     </section>
   );
 };
