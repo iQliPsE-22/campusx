@@ -9,7 +9,7 @@ const Headline = ({ heading, text, className }) => {
         <span className="text-blue-500">{heading.charAt(0)}</span>
         {heading.slice(1)}
       </h1>
-      <p className="bg-clip-text text-transparent bg-gradient-to-r from-[#e7f1f3] to-blue-300 quicksand text-center text-sm lg:text-xl tracking-wider">
+      <p className="bg-clip-text text-transparent bg-gradient-to-r from-[#e7f1f3] to-blue-300 quicksand text-center text-sm lg:text-lg tracking-wider">
         {text}
       </p>
     </div>

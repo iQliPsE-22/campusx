@@ -86,7 +86,7 @@ export default function Header() {
               <MessageSquare className="h-5 w-5" />
             </button>
             <Link
-              href="/profile"
+              href="/login"
               className="px-4 py-2 bg-blue-500 rounded-lg font-medium hover:brightness-90 transition"
             >
               Login/Register
