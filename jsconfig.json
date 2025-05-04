@@ -3,6 +3,7 @@
     "paths": {
       "@/*": ["./*"],
       "@components/*": ["./components/*"],
+      "@custom-components/*": ["./custom-components/*"],
     }
   }
 }

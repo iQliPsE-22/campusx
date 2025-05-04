@@ -1,13 +1,17 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Audiowide } from "next/font/google";
 import "./globals.css";
+import Footer from "./../custom-components/Footer";
+import Header from "./../custom-components/Header";
+import ResNavbar from "./../custom-components/nav/Res_navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const audiowide = Audiowide({
+  weight: "400",
+  variable: "--font-audiowide",
   subsets: ["latin"],
 });
 
@@ -19,10 +23,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${audiowide.variable} antialiased`}>
+        <Header />
+        {/* <Navbar /> */}
         {children}
+        <ResNavbar />
+        <Footer />
       </body>
     </html>
   );
