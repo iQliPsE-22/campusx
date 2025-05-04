@@ -87,7 +87,7 @@ export default function Header() {
             </button>
             <Link
               href="/profile"
-              className="px-4 py-2 bg-blue-500 text-black rounded-lg font-medium hover:brightness-90 transition"
+              className="px-4 py-2 bg-blue-500 rounded-lg font-medium hover:brightness-90 transition"
             >
               Login/Register
             </Link>

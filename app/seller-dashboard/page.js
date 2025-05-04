@@ -121,8 +121,8 @@ export default function Page() {
     return (
       <div className="container mx-auto px-4 py-12 flex justify-center items-center min-h-[60vh]">
         <div className="animate-pulse flex flex-col items-center">
-          <div className="h-8 w-64 bg-gray-700 rounded mb-4"></div>
-          <div className="h-4 w-32 bg-gray-700 rounded"></div>
+          <div className="h-8 w-64  rounded mb-4"></div>
+          <div className="h-4 w-32  rounded"></div>
         </div>
       </div>
     );
@@ -137,17 +137,17 @@ export default function Page() {
             Manage your listings, sales, and messages
           </p>
         </div>
-        <div className="mt-4 md:mt-0 flex gap-3">
+        <div className="mt-4 md:mt-0 flex gap-3 text-sm">
           <Link
             href="/seller-dashboard/new-listing"
-            className="px-5 py-2 bg-rose-600 text-white rounded-lg font-medium hover:bg-rose-700 transition-colors flex items-center"
+            className="px-5 py-2 bg-white text-black rounded-lg font-medium hover:bg-[#fafafa] transition-colors flex items-center"
           >
             <Plus className="h-4 w-4 mr-2" />
             New Listing
           </Link>
           <Link
             href="/seller-dashboard/settings"
-            className="px-5 py-2 bg-gray-800 border border-gray-700 text-gray-300 rounded-lg font-medium hover:bg-gray-700 transition-colors flex items-center"
+            className="px-5 py-2 bg-[#0a0d12] border border-gray-700 text-gray-300 rounded-lg font-medium hover: transition-colors flex items-center"
           >
             <Settings className="h-4 w-4 mr-2" />
             Settings
@@ -156,7 +156,7 @@ export default function Page() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-        <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-sm">
+        <div className="bg-[#0a0d12] p-6 rounded-lg border border-gray-700 shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-medium text-gray-400">Active Listings</h3>
             <Package className="h-5 w-5 text-rose-500" />
@@ -165,7 +165,7 @@ export default function Page() {
           <p className="text-sm text-gray-400 mt-1">Across all categories</p>
         </div>
 
-        <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-sm">
+        <div className="bg-[#0a0d12] p-6 rounded-lg border border-gray-700 shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-medium text-gray-400">Items Sold</h3>
             <ShoppingBag className="h-5 w-5 text-emerald-500" />
@@ -174,7 +174,7 @@ export default function Page() {
           <p className="text-sm text-gray-400 mt-1">In the last 30 days</p>
         </div>
 
-        <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-sm">
+        <div className="bg-[#0a0d12] p-6 rounded-lg border border-gray-700 shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-medium text-gray-400">Total Earnings</h3>
             <DollarSign className="h-5 w-5 text-amber-500" />
@@ -185,7 +185,7 @@ export default function Page() {
           <p className="text-sm text-gray-400 mt-1">In the last 30 days</p>
         </div>
 
-        <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-sm">
+        <div className="bg-[#0a0d12] p-6 rounded-lg border border-gray-700 shadow-sm">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-medium text-gray-400">Unread Messages</h3>
             <MessageSquare className="h-5 w-5 text-indigo-500" />
@@ -218,16 +218,16 @@ export default function Page() {
         </TabsList>
 
         <TabsContent value="listings">
-          <div className="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden">
+          <div className="bg-[#0a0d12] rounded-lg border border-gray-700 overflow-hidden">
             <div className="p-4 border-b border-gray-700 flex justify-between items-center">
               <h3 className="font-semibold text-gray-200">
                 Active Listings ({activeListings.length})
               </h3>
               <div className="flex gap-2">
-                <button className="px-3 py-1 text-sm bg-gray-700 hover:bg-gray-600 rounded">
+                <button className="px-3 py-1 text-sm  hover:bg-gray-600 rounded">
                   Filter
                 </button>
-                <button className="px-3 py-1 text-sm bg-gray-700 hover:bg-gray-600 rounded">
+                <button className="px-3 py-1 text-sm  hover:bg-gray-600 rounded">
                   Sort
                 </button>
               </div>
@@ -239,7 +239,7 @@ export default function Page() {
                   key={listing.id}
                   className="p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4"
                 >
-                  <div className="relative w-full sm:w-16 h-16 bg-gray-700 rounded overflow-hidden flex-shrink-0">
+                  <div className="relative w-full sm:w-16 h-16  rounded overflow-hidden flex-shrink-0">
                     <Image
                       src={listing.image || "/placeholder.svg"}
                       alt={listing.title}
@@ -289,11 +289,11 @@ export default function Page() {
                   </div>
 
                   <div className="flex gap-2 w-full sm:w-auto">
-                    <button className="flex-1 sm:flex-initial px-3 py-1.5 text-sm bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center">
+                    <button className="flex-1 sm:flex-initial px-3 py-1.5 text-sm  hover:bg-gray-600 rounded flex items-center justify-center">
                       <Edit className="h-4 w-4 mr-1" />
                       Edit
                     </button>
-                    <button className="flex-1 sm:flex-initial px-3 py-1.5 text-sm bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center text-red-500">
+                    <button className="flex-1 sm:flex-initial px-3 py-1.5 text-sm  hover:bg-gray-600 rounded flex items-center justify-center text-red-500">
                       <Trash2 className="h-4 w-4 mr-1" />
                       Delete
                     </button>
