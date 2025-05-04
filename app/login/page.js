@@ -14,6 +14,8 @@ const Page = () => {
         <Headline
           heading={"CAMPUSX SPACE"}
           text={"Assignments, Trades, and Rentals — All in One Place!"}
+          className="text-2xl"
+
         />
         <div className="flex flex-col lg:flex-row items-center justify-start lg:justify-around">
           <div className="w-4/5 lg:w-1/2 flex justify-center p-2 lg:p-4 ">
@@ -22,7 +24,7 @@ const Page = () => {
               alt="Writer"
               width="50"
               height="50"
-              className="w-3/4 lg:w-full rounded-lg"
+              className="w-full rounded-lg"
             />
           </div>
 

@@ -26,7 +26,7 @@ const categories = [
 
 export default function ResCategoryMenu() {
   return (
-    <div className="block lg:hidden fixed bottom-16 left-1/2 transform -translate-x-1/2 w-11/12 bg-white/20 bg-opacity-80 backdrop-blur-sm rounded-2xl shadow-lg p-4 grid grid-cols-3 gap-4 origin-bottom animate-scale-in">
+    <div className="block z-100 lg:hidden fixed bottom-16 left-1/2 transform -translate-x-1/2 w-11/12 bg-white/20 bg-opacity-80 backdrop-blur-sm rounded-2xl shadow-lg p-4 grid grid-cols-3 gap-4 origin-bottom animate-scale-in">
       {categories.map((cat) => (
         <Link
           key={cat.name}

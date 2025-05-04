@@ -4,7 +4,7 @@ import Headline from "@/custom-components/Headline";
 import HopBtn from "@/custom-components/HopBtn";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import Testimonial from "./../custom-components/Testimonial";
-
+import Link from "next/link";
 const heroBlocks = [
   {
     img: "/students.svg",
@@ -14,6 +14,7 @@ const heroBlocks = [
     textColor: "text-[#ffd867]",
     bgColor: "bg-white/5",
     accent: "#ffd867",
+    url: "/assignments",
   },
   {
     img: "/shopping.svg",
@@ -23,6 +24,7 @@ const heroBlocks = [
     textColor: "text-[#c47acc]",
     bgColor: "bg-white/10",
     accent: "#c47acc",
+    url: "/marketplace",
   },
   {
     img: "/rent.svg",
@@ -32,6 +34,7 @@ const heroBlocks = [
     textColor: "text-[#a58ad4]",
     bgColor: "bg-white/5",
     accent: "#a58ad4",
+    url: "/rentals",
   },
 ];
 
@@ -100,8 +103,10 @@ export default function Home() {
                 style={{ backgroundColor: block.accent }}
                 className="mt-6 px-8 py-6 text-black font-semibold rounded-lg hover:brightness-110 transition-all duration-300 transform hover:scale-105 hover:shadow-md group"
               >
-                {block.buttonText}
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                <Link href={block.url} className="w-full flex items-center">
+                  {block.buttonText}
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
               </Button>
             </div>
           </div>

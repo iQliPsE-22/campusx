@@ -27,7 +27,7 @@ const Category = ({ img_src, category_name, address = "#" }) => {
         width={500}
         height={500}
         className="w-full h-64 md:h-80 lg:h-100 object-cover rounded-2xl
-                   filter grayscale group-hover:filter-none
+                   filter lg:grayscale group-hover:filter-none
                    transition-all duration-300"
         loading="lazy"
       />
@@ -41,11 +41,11 @@ const Category = ({ img_src, category_name, address = "#" }) => {
           ${
             hover
               ? "translate-y-0"
-              : "translate-y-full group-hover:translate-y-0"
+              : "translate-y-0 lg:translate-y-full group-hover:translate-y-0"
           }
         `}
       >
-        <h2 className="text-md md:text-lg font-semibold tracking-wide">
+        <h2 className="text-sm md:text-lg font-semibold tracking-wide">
           {category_name}
         </h2>
       </div>

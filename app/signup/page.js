@@ -11,9 +11,11 @@ const Page = () => {
   return (
     <section className="bg-black h-full pt-8 p-4 pb-8 lg:p-8 min-h-dvh">
       <Headline
-        heading={"CAMPUSX SPACE"}
-        text={"Everything you need, is right here!"}
-      />
+          heading={"CAMPUSX SPACE"}
+          text={"Assignments, Trades, and Rentals — All in One Place!"}
+          className="text-2xl"
+
+        />
       <div className="min-h-dvh flex flex-col lg:flex-row items-center justify-center lg:justify-around">
         <div className="w-4/5 lg:w-1/2 flex justify-center p-2 lg:p-8 ">
           <Image
@@ -21,7 +23,7 @@ const Page = () => {
             alt="Writer"
             width="50"
             height="50"
-            className="w-3/4 lg:w-full rounded-lg"
+            className="w-full rounded-lg"
           />
         </div>
         <form className="inter text-sm lg:text-md bg-[#262626] w-full h-full lg:w-1/2 lg:text-left p-4 pt-8 lg:p-8 space-y-4 rounded-lg">
