@@ -11,152 +11,159 @@ import {
   Star,
   ArrowUpDown,
   Tag,
+  BookOpen,
 } from "lucide-react";
 import Link from "next/link";
 import PageHeader from "./../../../custom-components/PageHeader";
 import Loading from "./../../../custom-components/Loading";
 import ShopByCategory from "./../../../custom-components/ShopByCategory";
 
-const MenPage = () => {
+const StationaryPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [activeFilter, setActiveFilter] = useState("all");
-  const [priceRange, setPriceRange] = useState([0, 5000]);
+  const [priceRange, setPriceRange] = useState([0, 10000]);
   const [sortBy, setSortBy] = useState("featured");
   const [showFilters, setShowFilters] = useState(false);
   const [products, setProducts] = useState([]);
 
   // Simulated product data
   useEffect(() => {
-    const menProducts = [
+    const stationaryProducts = [
       {
-        id: "m1",
-        title: "Premium Cotton Graphic T-Shirt",
-        price: 799,
-        category: "tshirts",
-        rating: 4.5,
-        reviews: 28,
-        image: "/men.jpg",
-        trending: true,
-        discount: "20% OFF",
-        sizes: ["S", "M", "L", "XL"],
-      },
-      {
-        id: "m2",
-        title: "Slim Fit Denim Jeans",
-        price: 1499,
-        category: "jeans",
+        id: "s1",
+        title: "Premium Leather-Bound Journal Set",
+        price: 1299,
+        category: "notebooks",
         rating: 4.7,
         reviews: 42,
-        image: "/men.jpg",
+        image: "/stationary.jpg",
         trending: true,
-        sizes: ["30", "32", "34", "36"],
+        tags: ["Premium", "Journal"],
       },
       {
-        id: "m3",
-        title: "Casual Hooded Sweatshirt",
-        price: 1299,
-        category: "hoodies",
-        rating: 4.3,
-        reviews: 19,
-        image: "/men.jpg",
-        discount: "15% OFF",
-        sizes: ["M", "L", "XL"],
-      },
-      {
-        id: "m4",
-        title: "Classic Oxford Button-Down Shirt",
-        price: 999,
-        category: "shirts",
-        rating: 4.6,
-        reviews: 35,
-        image: "/men.jpg",
-        sizes: ["S", "M", "L", "XL", "XXL"],
-      },
-      {
-        id: "m5",
-        title: "Lightweight Bomber Jacket",
-        price: 2499,
-        category: "jackets",
-        rating: 4.8,
-        reviews: 23,
-        image: "/men.jpg",
-        trending: true,
-        sizes: ["M", "L", "XL"],
-      },
-      {
-        id: "m6",
-        title: "Athletic Running Shoes",
-        price: 3499,
-        category: "shoes",
-        rating: 4.4,
-        reviews: 31,
-        image: "/men.jpg",
-        discount: "10% OFF",
-        sizes: ["8", "9", "10", "11"],
-      },
-      {
-        id: "m7",
-        title: "Minimalist Analog Watch",
-        price: 1999,
-        category: "accessories",
+        id: "s2",
+        title: "Pilot G2 Gel Pens (Pack of 12)",
+        price: 499,
+        category: "pens",
         rating: 4.9,
-        reviews: 47,
-        image: "/men.jpg",
+        reviews: 87,
+        image: "/stationary.jpg",
         trending: true,
+        discount: "10% OFF",
+        tags: ["Pilot", "Gel Pens"],
       },
       {
-        id: "m8",
-        title: "Canvas Backpack with Laptop Sleeve",
+        id: "s3",
+        title: "Moleskine Classic Notebook",
+        price: 899,
+        category: "notebooks",
+        rating: 4.8,
+        reviews: 65,
+        image: "/stationary.jpg",
+        discount: "15% OFF",
+        tags: ["Moleskine", "Notebook"],
+      },
+      {
+        id: "s4",
+        title: "Staedtler Drawing Pencil Set",
+        price: 599,
+        category: "pencils",
+        rating: 4.6,
+        reviews: 38,
+        image: "/stationary.jpg",
+        trending: true,
+        tags: ["Staedtler", "Drawing"],
+      },
+      {
+        id: "s5",
+        title: "HP Premium Printer Paper (500 Sheets)",
+        price: 399,
+        category: "paper",
+        rating: 4.3,
+        reviews: 29,
+        image: "/stationary.jpg",
+        tags: ["HP", "Paper"],
+      },
+      {
+        id: "s6",
+        title: "Wireless Charging Desk Organizer",
+        price: 1499,
+        category: "organizers",
+        rating: 4.5,
+        reviews: 34,
+        image: "/stationary.jpg",
+        discount: "20% OFF",
+        tags: ["Organizer", "Charging"],
+      },
+      {
+        id: "s7",
+        title: "Scientific Calculator - TI-84 Plus",
+        price: 7999,
+        category: "calculators",
+        rating: 4.9,
+        reviews: 112,
+        image: "/stationary.jpg",
+        trending: true,
+        tags: ["TI-84", "Calculator"],
+      },
+      {
+        id: "s8",
+        title: "Ergonomic Desk Lamp with USB Port",
         price: 1299,
         category: "accessories",
+        rating: 4.4,
+        reviews: 47,
+        image: "/stationary.jpg",
+        discount: "5% OFF",
+        tags: ["Lamp", "USB"],
+      },
+      {
+        id: "s9",
+        title: "Oxford Index Cards (Pack of 300)",
+        price: 199,
+        category: "paper",
         rating: 4.2,
-        reviews: 18,
-        image: "/men.jpg",
-        discount: "25% OFF",
+        reviews: 56,
+        image: "/stationary.jpg",
+        tags: ["Oxford", "Index Cards"],
       },
       {
-        id: "m9",
-        title: "Striped Polo T-Shirt",
+        id: "s10",
+        title: "Adjustable Laptop Stand",
         price: 899,
-        category: "tshirts",
-        rating: 4.3,
-        reviews: 22,
-        image: "/men.jpg",
-        sizes: ["S", "M", "L", "XL"],
-      },
-      {
-        id: "m10",
-        title: "Cargo Jogger Pants",
-        price: 1199,
-        category: "jeans",
-        rating: 4.1,
-        reviews: 15,
-        image: "/men.jpg",
-        sizes: ["30", "32", "34", "36"],
-      },
-      {
-        id: "m11",
-        title: "Leather Wallet",
-        price: 799,
         category: "accessories",
-        rating: 4.7,
-        reviews: 39,
-        image: "/men.jpg",
+        rating: 4.6,
+        reviews: 73,
+        image: "/stationary.jpg",
+        discount: "12% OFF",
+        tags: ["Laptop", "Stand"],
       },
       {
-        id: "m12",
-        title: "Formal Blazer",
-        price: 3999,
-        category: "jackets",
-        rating: 4.8,
-        reviews: 27,
-        image: "/men.jpg",
-        sizes: ["M", "L", "XL"],
+        id: "s11",
+        title: "Watercolor Paint Set - 24 Colors",
+        price: 1199,
+        category: "art",
+        rating: 4.7,
+        reviews: 41,
+        image: "/stationary.jpg",
+        trending: true,
+        tags: ["Art", "Watercolor"],
+      },
+      {
+        id: "s12",
+        title: "Compact Stapler with 1000 Staples",
+        price: 349,
+        category: "accessories",
+        rating: 4.3,
+        reviews: 89,
+        image: "/stationary.jpg",
+        discount: "25% OFF",
+        tags: ["Stapler", "Office"],
       },
     ];
 
     setTimeout(() => {
-      setProducts(menProducts);
+      setProducts(stationaryProducts);
       setIsLoading(false);
     }, 500);
   }, []);
@@ -184,14 +191,15 @@ const MenPage = () => {
 
   // Categories for filter
   const categories = [
-    { id: "all", name: "All Items", image: "/men.jpg" },
-    { id: "tshirts", name: "T-Shirts", image: "/men.jpg" },
-    { id: "shirts", name: "Shirts", image: "/men.jpg" },
-    { id: "jeans", name: "Jeans & Pants", image: "/men.jpg" },
-    { id: "hoodies", name: "Hoodies", image: "/men.jpg" },
-    { id: "jackets", name: "Jackets", image: "/men.jpg" },
-    { id: "shoes", name: "Shoes", image: "/men.jpg" },
-    { id: "accessories", name: "Accessories", image: "/men.jpg" },
+    { id: "all", name: "All Stationery", image: "/stationary.jpg" },
+    { id: "notebooks", name: "Notebooks & Journals", image: "/stationary.jpg" },
+    { id: "pens", name: "Pens & Markers", image: "/stationary.jpg" },
+    { id: "pencils", name: "Pencils & Drawing", image: "/stationary.jpg" },
+    { id: "paper", name: "Paper Products", image: "/stationary.jpg" },
+    { id: "organizers", name: "Organizers", image: "/stationary.jpg" },
+    { id: "calculators", name: "Calculators", image: "/stationary.jpg" },
+    { id: "art", name: "Art Supplies", image: "/stationary.jpg" },
+    { id: "accessories", name: "Accessories", image: "/stationary.jpg" },
   ];
 
   if (isLoading) {
@@ -200,22 +208,61 @@ const MenPage = () => {
 
   return (
     <section className="bg-black text-white min-h-dvh">
-      {/* Hero Banner */}
       <PageHeader
-        imageSrc="/men.jpg"
-        title="MEN'S FASHION"
-        titleAccent="M"
-        subtitle="Elevate your campus style with our premium collection"
-        primaryBtnText="Trending Now"
+        imageSrc="/stationary.jpg"
+        title="STATIONERY"
+        titleAccent="S"
+        subtitle="Quality Supplies for Academic Excellence"
+        primaryBtnText="Top Picks"
         primaryBtnLink="#trending"
         secondaryBtnText="Shop All"
         secondaryBtnLink="#all-products"
       />
+      <div className="bg-gradient-to-r from-blue-900/50 to-indigo-900/50 py-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center">
+              <BookOpen className="h-6 w-6 text-blue-400 mr-2" />
+              <h2 className="text-xl md:text-2xl font-bold">
+                BACK TO SCHOOL ESSENTIALS
+              </h2>
+            </div>
+            <Link
+              href="#all-products"
+              className="text-blue-400 hover:text-blue-300 text-sm"
+            >
+              View All →
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {products
+              .filter((p) =>
+                ["notebooks", "pens", "calculators"].includes(p.category)
+              )
+              .slice(0, 4)
+              .map((product) => (
+                <ProductCard
+                  key={`school-${product.id}`}
+                  productId={product.id}
+                  imgsrc={product.image}
+                  title={product.title}
+                  price={product.price}
+                  rating={product.rating}
+                  reviews={product.reviews}
+                  discount={product.discount}
+                  tags={product.tags}
+                />
+              ))}
+          </div>
+        </div>
+      </div>
+
       {/* Trending Section */}
       <div id="trending" className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold">
-            <span className="text-blue-500">T</span>RENDING NOW
+            <span className="text-blue-500">T</span>RENDING ITEMS
           </h2>
           <Link
             href="#all-products"
@@ -227,18 +274,17 @@ const MenPage = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {trendingProducts.slice(0, 4).map((product) => (
-            <div key={product.id} className="relative group">
-              {product.discount && (
-                <div className="absolute top-3 left-3 z-10 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
-                  {product.discount}
-                </div>
-              )}
-              <ProductCard
-                imgsrc={product.image}
-                title={product.title}
-                price={product.price}
-              />
-            </div>
+            <ProductCard
+              key={product.id}
+              productId={product.id}
+              imgsrc={product.image}
+              title={product.title}
+              price={product.price}
+              rating={product.rating}
+              reviews={product.reviews}
+              discount={product.discount}
+              tags={product.tags}
+            />
           ))}
         </div>
       </div>
@@ -246,8 +292,8 @@ const MenPage = () => {
       {/* Main Products Section */}
       <div id="all-products" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
         <Headline
-          text="Stylish Essentials for the Modern Student"
-          heading="SHOP MEN'S COLLECTION"
+          text="Quality Supplies for Academic Excellence"
+          heading="SHOP STATIONERY"
           className="text-3xl lg:text-4xl mb-8"
         />
 
@@ -321,11 +367,14 @@ const MenPage = () => {
                     <input
                       type="range"
                       min="0"
-                      max="5000"
-                      step="100"
+                      max="10000"
+                      step="500"
                       value={priceRange[1]}
                       onChange={(e) =>
-                        setPriceRange([priceRange[0], parseInt(e.target.value)])
+                        setPriceRange([
+                          priceRange[0],
+                          Number.parseInt(e.target.value),
+                        ])
                       }
                       className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-blue-500"
                     />
@@ -389,28 +438,17 @@ const MenPage = () => {
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {sortedProducts.map((product) => (
-            <div key={product.id} className="relative group">
-              {product.discount && (
-                <div className="absolute top-3 left-3 z-10 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
-                  {product.discount}
-                </div>
-              )}
-              <ProductCard
-                imgsrc={product.image}
-                title={product.title}
-                price={product.price}
-              />
-              <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="flex flex-col gap-2">
-                  <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
-                    Quick View
-                  </button>
-                  <button className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg transition-colors">
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
-            </div>
+            <ProductCard
+              key={product.id}
+              productId={product.id}
+              imgsrc={product.image}
+              title={product.title}
+              price={product.price}
+              rating={product.rating}
+              reviews={product.reviews}
+              discount={product.discount}
+              tags={product.tags}
+            />
           ))}
         </div>
 
@@ -425,7 +463,7 @@ const MenPage = () => {
             <button
               onClick={() => {
                 setActiveFilter("all");
-                setPriceRange([0, 5000]);
+                setPriceRange([0, 10000]);
               }}
               className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
             >
@@ -457,9 +495,95 @@ const MenPage = () => {
       </div>
 
       {/* Featured Categories */}
+
       <ShopByCategory categories={categories} />
+      {/* Study Tips */}
+      <div className="py-16 px-4 md:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
+            <span className="text-blue-500">S</span>TUDY TIPS & ORGANIZATION
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10">
+              <div className="relative h-48">
+                <Image
+                  src="/stationary.jpg"
+                  alt="Note Taking"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="text-lg font-medium mb-2">
+                  Effective Note-Taking Strategies
+                </h3>
+                <p className="text-gray-400 text-sm mb-4">
+                  Learn how to take better notes and improve retention.
+                </p>
+                <Link
+                  href="#"
+                  className="text-blue-400 hover:text-blue-300 text-sm"
+                >
+                  Read More →
+                </Link>
+              </div>
+            </div>
+
+            <div className="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10">
+              <div className="relative h-48">
+                <Image
+                  src="/stationary.jpg"
+                  alt="Desk Organization"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="text-lg font-medium mb-2">
+                  Desk Organization for Productivity
+                </h3>
+                <p className="text-gray-400 text-sm mb-4">
+                  Set up your workspace for maximum focus and efficiency.
+                </p>
+                <Link
+                  href="#"
+                  className="text-blue-400 hover:text-blue-300 text-sm"
+                >
+                  Read More →
+                </Link>
+              </div>
+            </div>
+
+            <div className="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10">
+              <div className="relative h-48">
+                <Image
+                  src="/stationary.jpg"
+                  alt="Study Planner"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="text-lg font-medium mb-2">
+                  Creating the Perfect Study Planner
+                </h3>
+                <p className="text-gray-400 text-sm mb-4">
+                  Plan your semester with these organizational tips.
+                </p>
+                <Link
+                  href="#"
+                  className="text-blue-400 hover:text-blue-300 text-sm"
+                >
+                  Read More →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
 
-export default MenPage;
+export default StationaryPage;
