@@ -45,7 +45,7 @@ const Category = ({ img_src, category_name, address = "#" }) => {
           }
         `}
       >
-        <h2 className="text-sm md:text-lg font-semibold tracking-wide">
+        <h2 className="text-sm md:text-base font-medium tracking-wide">
           {category_name}
         </h2>
       </div>
