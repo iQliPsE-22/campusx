@@ -16,7 +16,7 @@ export default function ResNavbar() {
   return (
     <>
       {showCategories && <ResCategoryMenu />}
-      <nav className="lg:hidden pt-2 fixed bottom-0 w-full bg-transparent bg-opacity-80 backdrop-blur-sm border-t border-gray-800 shadow-inner z-50">
+      <nav className="lg:hidden px-2 pt-2 fixed bottom-0 w-full bg-transparent bg-opacity-80 backdrop-blur-sm border-t border-gray-800 shadow-inner z-50">
         <ul className="flex justify-around py-2">
           {/* Home */}
           <li>

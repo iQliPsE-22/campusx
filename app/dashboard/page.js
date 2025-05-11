@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { motion } from "framer-motion"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
 import {
   Package,
   ShoppingBag,
@@ -24,32 +24,45 @@ import {
   MoreHorizontal,
   AlertCircle,
   ChevronRight,
-} from "lucide-react"
+} from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Skeleton } from "@/components/ui/skeleton"
-import { Progress } from "@/components/ui/progress"
+} from "@/components/ui/dropdown-menu";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Progress } from "@/components/ui/progress";
 
 export default function SellerDashboardPage() {
-  const [isLoading, setIsLoading] = useState(true)
-  const [activeListings, setActiveListings] = useState([])
-  const [soldItems, setSoldItems] = useState([])
-  const [messages, setMessages] = useState([])
-  const [analytics, setAnalytics] = useState(null)
-  const [filterCategory, setFilterCategory] = useState("all")
-  const [searchQuery, setSearchQuery] = useState("")
+  const [isLoading, setIsLoading] = useState(true);
+  const [activeListings, setActiveListings] = useState([]);
+  const [soldItems, setSoldItems] = useState([]);
+  const [messages, setMessages] = useState([]);
+  const [analytics, setAnalytics] = useState(null);
+  const [filterCategory, setFilterCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     // Simulate loading delay
@@ -104,7 +117,7 @@ export default function SellerDashboardPage() {
           saves: 8,
           status: "pending",
         },
-      ]
+      ];
 
       const mockSoldItems = [
         {
@@ -140,14 +153,15 @@ export default function SellerDashboardPage() {
           buyer: "Alex Johnson",
           status: "in-progress",
         },
-      ]
+      ];
 
       const mockMessages = [
         {
           id: "msg-1",
           from: "Alex Johnson",
           subject: "CS101 Textbook",
-          preview: "Hi, is this textbook still available? I was wondering if...",
+          preview:
+            "Hi, is this textbook still available? I was wondering if...",
           time: "2 hours ago",
           unread: true,
           avatar: "/placeholder.svg?height=40&width=40",
@@ -156,7 +170,8 @@ export default function SellerDashboardPage() {
           id: "msg-2",
           from: "Emily Davis",
           subject: "1BR Apartment Near Campus",
-          preview: "Hello, I'm interested in your apartment listing. Is it still...",
+          preview:
+            "Hello, I'm interested in your apartment listing. Is it still...",
           time: "1 day ago",
           unread: false,
           avatar: "/placeholder.svg?height=40&width=40",
@@ -165,12 +180,13 @@ export default function SellerDashboardPage() {
           id: "msg-3",
           from: "Ryan Thompson",
           subject: "DSLR Camera Weekend Rental",
-          preview: "Hey there! I'd like to rent your camera for this coming weekend...",
+          preview:
+            "Hey there! I'd like to rent your camera for this coming weekend...",
           time: "2 days ago",
           unread: false,
           avatar: "/placeholder.svg?height=40&width=40",
         },
-      ]
+      ];
 
       const mockAnalytics = {
         revenue: {
@@ -193,23 +209,26 @@ export default function SellerDashboardPage() {
           { name: "Rentals", value: 30 },
           { name: "Projects", value: 10 },
         ],
-      }
+      };
 
-      setActiveListings(mockActiveListings)
-      setSoldItems(mockSoldItems)
-      setMessages(mockMessages)
-      setAnalytics(mockAnalytics)
-      setIsLoading(false)
-    }, 1500)
+      setActiveListings(mockActiveListings);
+      setSoldItems(mockSoldItems);
+      setMessages(mockMessages);
+      setAnalytics(mockAnalytics);
+      setIsLoading(false);
+    }, 1500);
 
-    return () => clearTimeout(timer)
-  }, [])
+    return () => clearTimeout(timer);
+  }, []);
 
   const filteredListings = activeListings.filter((listing) => {
-    const matchesCategory = filterCategory === "all" || listing.category === filterCategory
-    const matchesSearch = listing.title.toLowerCase().includes(searchQuery.toLowerCase())
-    return matchesCategory && matchesSearch
-  })
+    const matchesCategory =
+      filterCategory === "all" || listing.category === filterCategory;
+    const matchesSearch = listing.title
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -218,10 +237,10 @@ export default function SellerDashboardPage() {
       y: 0,
       transition: { duration: 0.6 },
     },
-  }
+  };
 
   if (isLoading) {
-    return <DashboardSkeleton />
+    return <DashboardSkeleton />;
   }
 
   return (
@@ -231,7 +250,9 @@ export default function SellerDashboardPage() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
             <div>
               <h1 className="text-3xl font-bold mb-2">Seller Dashboard</h1>
-              <p className="text-gray-400">Manage your listings, sales, and messages</p>
+              <p className="text-gray-400">
+                Manage your listings, sales, and messages
+              </p>
             </div>
             <div className="mt-4 md:mt-0 flex gap-3">
               <Link href="/seller-dashboard/new-listing">
@@ -241,7 +262,10 @@ export default function SellerDashboardPage() {
                 </Button>
               </Link>
               <Link href="/seller-dashboard/settings">
-                <Button variant="outline" className="border-gray-700 hover:border-gray-600">
+                <Button
+                  variant="outline"
+                  className="border-gray-700 hover:border-gray-600"
+                >
                   <Settings className="h-4 w-4 mr-2" />
                   Settings
                 </Button>
@@ -271,7 +295,9 @@ export default function SellerDashboardPage() {
               title="Total Earnings"
               value={`₹${analytics.revenue.total.toFixed(2)}`}
               icon={<DollarSign className="h-5 w-5 text-amber-500" />}
-              description={`${analytics.revenue.change > 0 ? "+" : ""}${analytics.revenue.change}% from last month`}
+              description={`${analytics.revenue.change > 0 ? "+" : ""}${
+                analytics.revenue.change
+              }% from last month`}
               trend={analytics.revenue.change > 0 ? "up" : "down"}
               link="/seller-dashboard/earnings"
             />
@@ -311,7 +337,9 @@ export default function SellerDashboardPage() {
               <Card className="bg-gray-900 border-gray-800">
                 <CardHeader className="pb-2">
                   <div className="flex flex-col md:flex-row justify-between md:items-center gap-4">
-                    <CardTitle>Active Listings ({filteredListings.length})</CardTitle>
+                    <CardTitle>
+                      Active Listings ({filteredListings.length})
+                    </CardTitle>
                     <div className="flex flex-col md:flex-row gap-4">
                       <div className="relative">
                         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 h-4 w-4" />
@@ -323,18 +351,27 @@ export default function SellerDashboardPage() {
                         />
                       </div>
                       <div className="flex gap-2">
-                        <Select value={filterCategory} onValueChange={setFilterCategory}>
+                        <Select
+                          value={filterCategory}
+                          onValueChange={setFilterCategory}
+                        >
                           <SelectTrigger className="bg-gray-800 border-gray-700 w-[180px]">
                             <SelectValue placeholder="Filter by category" />
                           </SelectTrigger>
                           <SelectContent className="bg-gray-800 border-gray-700">
                             <SelectItem value="all">All Categories</SelectItem>
-                            <SelectItem value="Marketplace">Marketplace</SelectItem>
+                            <SelectItem value="Marketplace">
+                              Marketplace
+                            </SelectItem>
                             <SelectItem value="Rentals">Rentals</SelectItem>
                             <SelectItem value="Projects">Projects</SelectItem>
                           </SelectContent>
                         </Select>
-                        <Button variant="outline" size="icon" className="border-gray-700">
+                        <Button
+                          variant="outline"
+                          size="icon"
+                          className="border-gray-700"
+                        >
                           <Filter className="h-4 w-4" />
                         </Button>
                       </div>
@@ -360,20 +397,30 @@ export default function SellerDashboardPage() {
 
                           <div className="flex-grow">
                             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
-                              <h4 className="font-medium text-gray-200">{listing.title}</h4>
+                              <h4 className="font-medium text-gray-200">
+                                {listing.title}
+                              </h4>
                               <div className="text-blue-400 font-bold">
                                 ₹{listing.price}
                                 {listing.category === "Rentals" && (
-                                  <span className="text-xs text-gray-400 font-normal">/mo</span>
+                                  <span className="text-xs text-gray-400 font-normal">
+                                    /mo
+                                  </span>
                                 )}
                               </div>
                             </div>
 
                             <div className="flex flex-col sm:flex-row sm:justify-between">
                               <div className="flex items-center text-sm text-gray-400 mb-2 sm:mb-0">
-                                {listing.category === "Marketplace" && <ShoppingBag className="h-4 w-4 mr-1" />}
-                                {listing.category === "Rentals" && <Home className="h-4 w-4 mr-1" />}
-                                {listing.category === "Projects" && <Briefcase className="h-4 w-4 mr-1" />}
+                                {listing.category === "Marketplace" && (
+                                  <ShoppingBag className="h-4 w-4 mr-1" />
+                                )}
+                                {listing.category === "Rentals" && (
+                                  <Home className="h-4 w-4 mr-1" />
+                                )}
+                                {listing.category === "Projects" && (
+                                  <Briefcase className="h-4 w-4 mr-1" />
+                                )}
                                 <span>{listing.category}</span>
                                 <span className="mx-2">•</span>
                                 <span>Listed {listing.listed}</span>
@@ -385,7 +432,9 @@ export default function SellerDashboardPage() {
                                       : "border-amber-500 text-amber-500"
                                   }`}
                                 >
-                                  {listing.status === "active" ? "Active" : "Pending"}
+                                  {listing.status === "active"
+                                    ? "Active"
+                                    : "Pending"}
                                 </Badge>
                               </div>
 
@@ -401,7 +450,11 @@ export default function SellerDashboardPage() {
                           <div className="flex gap-2 w-full sm:w-auto">
                             <DropdownMenu>
                               <DropdownMenuTrigger asChild>
-                                <Button variant="outline" size="icon" className="border-gray-700 hover:bg-gray-800">
+                                <Button
+                                  variant="outline"
+                                  size="icon"
+                                  className="border-gray-700 hover:bg-gray-800"
+                                >
                                   <MoreHorizontal className="h-4 w-4" />
                                 </Button>
                               </DropdownMenuTrigger>
@@ -430,7 +483,9 @@ export default function SellerDashboardPage() {
                       <div className="mx-auto w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center mb-4">
                         <Package className="h-6 w-6 text-gray-400" />
                       </div>
-                      <h3 className="text-lg font-medium mb-2">No listings found</h3>
+                      <h3 className="text-lg font-medium mb-2">
+                        No listings found
+                      </h3>
                       <p className="text-gray-400 mb-6">
                         {searchQuery
                           ? `No results for "${searchQuery}"`
@@ -445,13 +500,22 @@ export default function SellerDashboardPage() {
                 </CardContent>
                 <CardFooter className="border-t border-gray-800 flex justify-between items-center py-4">
                   <div className="text-sm text-gray-400">
-                    Showing {filteredListings.length} of {activeListings.length} listings
+                    Showing {filteredListings.length} of {activeListings.length}{" "}
+                    listings
                   </div>
                   <div className="flex gap-2">
-                    <Button variant="outline" size="sm" className="border-gray-700">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="border-gray-700"
+                    >
                       Previous
                     </Button>
-                    <Button variant="outline" size="sm" className="border-gray-700">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="border-gray-700"
+                    >
                       Next
                     </Button>
                   </div>
@@ -464,12 +528,17 @@ export default function SellerDashboardPage() {
               <Card className="bg-gray-900 border-gray-800">
                 <CardHeader>
                   <CardTitle>Sold Items ({soldItems.length})</CardTitle>
-                  <CardDescription>Track your sales and rental transactions</CardDescription>
+                  <CardDescription>
+                    Track your sales and rental transactions
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="divide-y divide-gray-800">
                     {soldItems.map((item) => (
-                      <div key={item.id} className="py-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                      <div
+                        key={item.id}
+                        className="py-4 flex flex-col sm:flex-row items-start sm:items-center gap-4"
+                      >
                         <div className="relative w-full sm:w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                           <Image
                             src={item.image || "/placeholder.svg"}
@@ -481,15 +550,25 @@ export default function SellerDashboardPage() {
 
                         <div className="flex-grow">
                           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
-                            <h4 className="font-medium text-gray-200">{item.title}</h4>
-                            <div className="text-green-500 font-bold">₹{item.price}</div>
+                            <h4 className="font-medium text-gray-200">
+                              {item.title}
+                            </h4>
+                            <div className="text-green-500 font-bold">
+                              ₹{item.price}
+                            </div>
                           </div>
 
                           <div className="flex flex-col sm:flex-row sm:justify-between">
                             <div className="flex items-center text-sm text-gray-400 mb-2 sm:mb-0">
-                              {item.category === "Marketplace" && <ShoppingBag className="h-4 w-4 mr-1" />}
-                              {item.category === "Rentals" && <Home className="h-4 w-4 mr-1" />}
-                              {item.category === "Projects" && <Briefcase className="h-4 w-4 mr-1" />}
+                              {item.category === "Marketplace" && (
+                                <ShoppingBag className="h-4 w-4 mr-1" />
+                              )}
+                              {item.category === "Rentals" && (
+                                <Home className="h-4 w-4 mr-1" />
+                              )}
+                              {item.category === "Projects" && (
+                                <Briefcase className="h-4 w-4 mr-1" />
+                              )}
                               <span>{item.category}</span>
                               <span className="mx-2">•</span>
                               <span>Sold {item.soldDate}</span>
@@ -504,20 +583,32 @@ export default function SellerDashboardPage() {
                                     : "border-amber-500 text-amber-500"
                                 }
                               >
-                                {item.status === "completed" ? "Completed" : "In Progress"}
+                                {item.status === "completed"
+                                  ? "Completed"
+                                  : "In Progress"}
                               </Badge>
                               <span className="mx-2 text-gray-400">•</span>
-                              <span className="text-gray-400">Buyer: {item.buyer}</span>
+                              <span className="text-gray-400">
+                                Buyer: {item.buyer}
+                              </span>
                             </div>
                           </div>
                         </div>
 
                         <div className="flex gap-2 w-full sm:w-auto">
-                          <Button variant="outline" size="sm" className="border-gray-700 hover:bg-gray-800">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="border-gray-700 hover:bg-gray-800"
+                          >
                             <MessageSquare className="h-4 w-4 mr-2" />
                             Contact
                           </Button>
-                          <Button variant="outline" size="sm" className="border-gray-700 hover:bg-gray-800">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="border-gray-700 hover:bg-gray-800"
+                          >
                             <Eye className="h-4 w-4 mr-2" />
                             Details
                           </Button>
@@ -534,14 +625,18 @@ export default function SellerDashboardPage() {
               <Card className="bg-gray-900 border-gray-800">
                 <CardHeader>
                   <CardTitle>Messages</CardTitle>
-                  <CardDescription>Stay in touch with your buyers and renters</CardDescription>
+                  <CardDescription>
+                    Stay in touch with your buyers and renters
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="divide-y divide-gray-800">
                     {messages.map((message) => (
                       <div
                         key={message.id}
-                        className={`py-4 flex items-start gap-4 ${message.unread ? "bg-blue-900/10 -mx-6 px-6" : ""}`}
+                        className={`py-4 flex items-start gap-4 ${
+                          message.unread ? "bg-blue-900/10 -mx-6 px-6" : ""
+                        }`}
                       >
                         <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
                           <Image
@@ -560,13 +655,23 @@ export default function SellerDashboardPage() {
                                 <span className="ml-2 w-2 h-2 bg-blue-500 rounded-full inline-block"></span>
                               )}
                             </h4>
-                            <span className="text-xs text-gray-400 whitespace-nowrap ml-2">{message.time}</span>
+                            <span className="text-xs text-gray-400 whitespace-nowrap ml-2">
+                              {message.time}
+                            </span>
                           </div>
-                          <div className="text-sm font-medium text-gray-300 mb-1">{message.subject}</div>
-                          <p className="text-sm text-gray-400 truncate">{message.preview}</p>
+                          <div className="text-sm font-medium text-gray-300 mb-1">
+                            {message.subject}
+                          </div>
+                          <p className="text-sm text-gray-400 truncate">
+                            {message.preview}
+                          </p>
                         </div>
 
-                        <Button variant="outline" size="sm" className="border-gray-700 hover:bg-gray-800 flex-shrink-0">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="border-gray-700 hover:bg-gray-800 flex-shrink-0"
+                        >
                           Reply
                         </Button>
                       </div>
@@ -574,7 +679,9 @@ export default function SellerDashboardPage() {
                   </div>
                 </CardContent>
                 <CardFooter className="border-t border-gray-800">
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700">View All Messages</Button>
+                  <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                    View All Messages
+                  </Button>
                 </CardFooter>
               </Card>
             </TabsContent>
@@ -601,7 +708,9 @@ export default function SellerDashboardPage() {
                     <CardDescription>Last 7 days</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl font-bold mb-4">₹{analytics.revenue.total.toFixed(2)}</div>
+                    <div className="text-2xl font-bold mb-4">
+                      ₹{analytics.revenue.total.toFixed(2)}
+                    </div>
                     <div className="h-[200px] w-full">
                       {/* Chart would go here - using a placeholder */}
                       <div className="flex h-full items-end gap-2">
@@ -609,7 +718,12 @@ export default function SellerDashboardPage() {
                           <div
                             key={i}
                             className="bg-blue-500 rounded-t w-full"
-                            style={{ height: `${(value / Math.max(...analytics.revenue.data)) * 100}%` }}
+                            style={{
+                              height: `${
+                                (value / Math.max(...analytics.revenue.data)) *
+                                100
+                              }%`,
+                            }}
                           ></div>
                         ))}
                       </div>
@@ -624,7 +738,9 @@ export default function SellerDashboardPage() {
                       <Badge
                         variant="outline"
                         className={
-                          analytics.views.change > 0 ? "border-green-500 text-green-500" : "border-red-500 text-red-500"
+                          analytics.views.change > 0
+                            ? "border-green-500 text-green-500"
+                            : "border-red-500 text-red-500"
                         }
                       >
                         {analytics.views.change > 0 ? "+" : ""}
@@ -634,7 +750,9 @@ export default function SellerDashboardPage() {
                     <CardDescription>Last 7 days</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl font-bold mb-4">{analytics.views.total}</div>
+                    <div className="text-2xl font-bold mb-4">
+                      {analytics.views.total}
+                    </div>
                     <div className="h-[200px] w-full">
                       {/* Chart would go here - using a placeholder */}
                       <div className="flex h-full items-end gap-2">
@@ -642,7 +760,12 @@ export default function SellerDashboardPage() {
                           <div
                             key={i}
                             className="bg-purple-500 rounded-t w-full"
-                            style={{ height: `${(value / Math.max(...analytics.views.data)) * 100}%` }}
+                            style={{
+                              height: `${
+                                (value / Math.max(...analytics.views.data)) *
+                                100
+                              }%`,
+                            }}
                           ></div>
                         ))}
                       </div>
@@ -655,10 +778,14 @@ export default function SellerDashboardPage() {
                 <Card className="bg-gray-900 border-gray-800">
                   <CardHeader>
                     <CardTitle>Conversion Rate</CardTitle>
-                    <CardDescription>Percentage of views that result in sales</CardDescription>
+                    <CardDescription>
+                      Percentage of views that result in sales
+                    </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl font-bold mb-2">{analytics.conversion.rate}%</div>
+                    <div className="text-2xl font-bold mb-2">
+                      {analytics.conversion.rate}%
+                    </div>
                     <Badge
                       variant="outline"
                       className={
@@ -676,15 +803,28 @@ export default function SellerDashboardPage() {
                           <span>This Week</span>
                           <span>{analytics.conversion.rate}%</span>
                         </div>
-                        <Progress value={analytics.conversion.rate * 10} className="h-2 bg-gray-800" />
+                        <Progress
+                          value={analytics.conversion.rate * 10}
+                          className="h-2 bg-gray-800"
+                        />
                       </div>
                       <div>
                         <div className="flex justify-between mb-1 text-sm">
                           <span>Last Week</span>
-                          <span>{(analytics.conversion.rate - analytics.conversion.change).toFixed(1)}%</span>
+                          <span>
+                            {(
+                              analytics.conversion.rate -
+                              analytics.conversion.change
+                            ).toFixed(1)}
+                            %
+                          </span>
                         </div>
                         <Progress
-                          value={(analytics.conversion.rate - analytics.conversion.change) * 10}
+                          value={
+                            (analytics.conversion.rate -
+                              analytics.conversion.change) *
+                            10
+                          }
                           className="h-2 bg-gray-800"
                         />
                       </div>
@@ -695,7 +835,9 @@ export default function SellerDashboardPage() {
                 <Card className="bg-gray-900 border-gray-800">
                   <CardHeader>
                     <CardTitle>Sales by Category</CardTitle>
-                    <CardDescription>Distribution of your sales across categories</CardDescription>
+                    <CardDescription>
+                      Distribution of your sales across categories
+                    </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
@@ -705,7 +847,10 @@ export default function SellerDashboardPage() {
                             <span>{category.name}</span>
                             <span>{category.value}%</span>
                           </div>
-                          <Progress value={category.value} className="h-2 bg-gray-800" />
+                          <Progress
+                            value={category.value}
+                            className="h-2 bg-gray-800"
+                          />
                         </div>
                       ))}
                     </div>
@@ -719,7 +864,9 @@ export default function SellerDashboardPage() {
           <Card className="bg-gray-900 border-gray-800 mb-8">
             <CardHeader>
               <CardTitle>Recent Activity</CardTitle>
-              <CardDescription>Latest updates on your listings and sales</CardDescription>
+              <CardDescription>
+                Latest updates on your listings and sales
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="relative pl-6 border-l border-gray-800 space-y-6">
@@ -729,7 +876,9 @@ export default function SellerDashboardPage() {
                     <h4 className="font-medium">New Sale: TI-84 Calculator</h4>
                     <span className="text-xs text-gray-400">2 hours ago</span>
                   </div>
-                  <p className="text-sm text-gray-400">Michael Chen purchased your TI-84 Calculator for ₹60.00.</p>
+                  <p className="text-sm text-gray-400">
+                    Michael Chen purchased your TI-84 Calculator for ₹60.00.
+                  </p>
                 </div>
 
                 <div className="relative">
@@ -738,7 +887,9 @@ export default function SellerDashboardPage() {
                     <h4 className="font-medium">New Message</h4>
                     <span className="text-xs text-gray-400">5 hours ago</span>
                   </div>
-                  <p className="text-sm text-gray-400">Alex Johnson sent you a message about CS101 Textbook.</p>
+                  <p className="text-sm text-gray-400">
+                    Alex Johnson sent you a message about CS101 Textbook.
+                  </p>
                 </div>
 
                 <div className="relative">
@@ -747,7 +898,9 @@ export default function SellerDashboardPage() {
                     <h4 className="font-medium">Listing View Milestone</h4>
                     <span className="text-xs text-gray-400">1 day ago</span>
                   </div>
-                  <p className="text-sm text-gray-400">Your 1BR Apartment listing has reached 50+ views!</p>
+                  <p className="text-sm text-gray-400">
+                    Your 1BR Apartment listing has reached 50+ views!
+                  </p>
                 </div>
               </div>
             </CardContent>
@@ -762,7 +915,9 @@ export default function SellerDashboardPage() {
           <Card className="bg-gray-900 border-gray-800">
             <CardHeader>
               <CardTitle>Tips & Recommendations</CardTitle>
-              <CardDescription>Improve your selling performance</CardDescription>
+              <CardDescription>
+                Improve your selling performance
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
@@ -773,10 +928,13 @@ export default function SellerDashboardPage() {
                   <div>
                     <h4 className="font-medium mb-1">Complete Your Profile</h4>
                     <p className="text-sm text-gray-400">
-                      Sellers with complete profiles get 30% more inquiries. Add a profile picture and bio to increase
-                      your credibility.
+                      Sellers with complete profiles get 30% more inquiries. Add
+                      a profile picture and bio to increase your credibility.
                     </p>
-                    <Button variant="link" className="p-0 h-auto text-blue-400 mt-2">
+                    <Button
+                      variant="link"
+                      className="p-0 h-auto text-blue-400 mt-2"
+                    >
                       Update Profile
                     </Button>
                   </div>
@@ -789,10 +947,13 @@ export default function SellerDashboardPage() {
                   <div>
                     <h4 className="font-medium mb-1">Improve Your Photos</h4>
                     <p className="text-sm text-gray-400">
-                      Listings with high-quality photos sell 2x faster. Consider updating the images for your CS101
-                      Textbook listing.
+                      Listings with high-quality photos sell 2x faster. Consider
+                      updating the images for your CS101 Textbook listing.
                     </p>
-                    <Button variant="link" className="p-0 h-auto text-green-400 mt-2">
+                    <Button
+                      variant="link"
+                      className="p-0 h-auto text-green-400 mt-2"
+                    >
                       Learn Photography Tips
                     </Button>
                   </div>
@@ -803,7 +964,7 @@ export default function SellerDashboardPage() {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
 
 // Helper Components
@@ -821,7 +982,11 @@ function StatsCard({ title, value, icon, description, trend, link }) {
             <p className="text-sm text-gray-400 mt-1 flex items-center">
               {description}
               {trend && (
-                <span className={`ml-1 flex items-center ${trend === "up" ? "text-green-500" : "text-red-500"}`}>
+                <span
+                  className={`ml-1 flex items-center ${
+                    trend === "up" ? "text-green-500" : "text-red-500"
+                  }`}
+                >
                   {trend === "up" ? (
                     <ArrowUpRight className="h-3 w-3 mr-0.5" />
                   ) : (
@@ -832,14 +997,18 @@ function StatsCard({ title, value, icon, description, trend, link }) {
             </p>
           </div>
           <Link href={link || "#"}>
-            <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-gray-400 hover:text-white"
+            >
               <ChevronRight className="h-5 w-5" />
             </Button>
           </Link>
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
 
 function DashboardSkeleton() {
@@ -894,7 +1063,7 @@ function DashboardSkeleton() {
         </Card>
       </div>
     </div>
-  )
+  );
 }
 
 function Camera(props) {
@@ -914,5 +1083,5 @@ function Camera(props) {
       <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
       <circle cx="12" cy="13" r="3" />
     </svg>
-  )
+  );
 }

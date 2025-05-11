@@ -35,7 +35,7 @@ export default function Header() {
     },
     {
       name: "Dashboard",
-      href: "/seller-dashboard",
+      href: "/dashboard",
       icon: <User className="h-5 w-5" />,
     },
   ];
