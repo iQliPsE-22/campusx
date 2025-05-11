@@ -13,9 +13,9 @@ import {
   Tag,
 } from "lucide-react";
 import Link from "next/link";
-import PageHeader from "./../../../custom-components/PageHeader";
-import Loading from "./../../../custom-components/Loading";
-import ShopByCategory from "./../../../custom-components/ShopByCategory";
+import PageHeader from "@/custom-components/PageHeader";
+import Loading from "@/custom-components/Loading";
+import ShopByCategory from "@/custom-components/ShopByCategory";
 
 const WomenPage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -189,15 +189,35 @@ const WomenPage = () => {
 
   // Categories for filter
   const categories = [
-    { id: "all", name: "All Items", image: "/women.jpg" },
-    { id: "dresses", name: "Dresses", image: "/women.jpg" },
-    { id: "tops", name: "Tops & Blouses", image: "/women.jpg" },
-    { id: "jeans", name: "Jeans & Pants", image: "/women.jpg" },
-    { id: "skirts", name: "Skirts", image: "/women.jpg" },
-    { id: "activewear", name: "Activewear", image: "/women.jpg" },
-    { id: "jackets", name: "Jackets", image: "/women.jpg" },
-    { id: "shoes", name: "Shoes", image: "/women.jpg" },
-    { id: "accessories", name: "Accessories", image: "/women.jpg" },
+    { id: "all", name: "All Items", image: "/women.jpg", address: "/market" },
+    { id: "dresses", name: "Dresses", image: "/women.jpg", address: "/market" },
+    {
+      id: "tops",
+      name: "Tops & Blouses",
+      image: "/women.jpg",
+      address: "/market",
+    },
+    {
+      id: "jeans",
+      name: "Jeans & Pants",
+      image: "/women.jpg",
+      address: "/market",
+    },
+    { id: "skirts", name: "Skirts", image: "/women.jpg", address: "/market" },
+    {
+      id: "activewear",
+      name: "Activewear",
+      image: "/women.jpg",
+      address: "/market",
+    },
+    { id: "jackets", name: "Jackets", image: "/women.jpg", address: "/market" },
+    { id: "shoes", name: "Shoes", image: "/women.jpg", address: "/market" },
+    {
+      id: "accessories",
+      name: "Accessories",
+      image: "/women.jpg",
+      address: "/market",
+    },
   ];
 
   if (isLoading) {

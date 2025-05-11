@@ -40,7 +40,7 @@ const ShopByCategory = ({ categories = [] }) => {
           {categories.map((category, index) => (
             <motion.div key={category.id} variants={fadeInUp}>
               <Link
-                href={category.address}
+                href={category?.address}
                 className="group block relative h-64 rounded-xl overflow-hidden"
               >
                 <Image

@@ -191,15 +191,60 @@ const ElectronicsPage = () => {
 
   // Categories for filter
   const categories = [
-    { id: "all", name: "All Electronics", image: "/electronics.jpg" },
-    { id: "laptops", name: "Laptops", image: "/electronics.jpg" },
-    { id: "phones", name: "Smartphones", image: "/electronics.jpg" },
-    { id: "tablets", name: "Tablets", image: "/electronics.jpg" },
-    { id: "audio", name: "Audio", image: "/electronics.jpg" },
-    { id: "cameras", name: "Cameras", image: "/electronics.jpg" },
-    { id: "gaming", name: "Gaming", image: "/electronics.jpg" },
-    { id: "monitors", name: "Monitors", image: "/electronics.jpg" },
-    { id: "accessories", name: "Accessories", image: "/electronics.jpg" },
+    {
+      id: "all",
+      name: "All Electronics",
+      image: "/electronics.jpg",
+      address: "market",
+    },
+    {
+      id: "laptops",
+      name: "Laptops",
+      image: "/electronics.jpg",
+      address: "market",
+    },
+    {
+      id: "phones",
+      name: "Smartphones",
+      image: "/electronics.jpg",
+      address: "market",
+    },
+    {
+      id: "tablets",
+      name: "Tablets",
+      image: "/electronics.jpg",
+      address: "market",
+    },
+    {
+      id: "audio",
+      name: "Audio",
+      image: "/electronics.jpg",
+      address: "market",
+    },
+    {
+      id: "cameras",
+      name: "Cameras",
+      image: "/electronics.jpg",
+      address: "market",
+    },
+    {
+      id: "gaming",
+      name: "Gaming",
+      image: "/electronics.jpg",
+      address: "market",
+    },
+    {
+      id: "monitors",
+      name: "Monitors",
+      image: "/electronics.jpg",
+      address: "market",
+    },
+    {
+      id: "accessories",
+      name: "Accessories",
+      image: "/electronics.jpg",
+      address: "market",
+    },
   ];
 
   if (isLoading) {

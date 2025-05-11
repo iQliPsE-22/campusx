@@ -14,9 +14,9 @@ import {
   BookOpen,
 } from "lucide-react";
 import Link from "next/link";
-import PageHeader from "./../../../custom-components/PageHeader";
-import Loading from "./../../../custom-components/Loading";
-import ShopByCategory from "./../../../custom-components/ShopByCategory";
+import PageHeader from "@/custom-components/PageHeader";
+import Loading from "@/custom-components/Loading";
+import ShopByCategory from "@/custom-components/ShopByCategory";
 
 const StationaryPage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -191,15 +191,60 @@ const StationaryPage = () => {
 
   // Categories for filter
   const categories = [
-    { id: "all", name: "All Stationery", image: "/stationary.jpg" },
-    { id: "notebooks", name: "Notebooks & Journals", image: "/stationary.jpg" },
-    { id: "pens", name: "Pens & Markers", image: "/stationary.jpg" },
-    { id: "pencils", name: "Pencils & Drawing", image: "/stationary.jpg" },
-    { id: "paper", name: "Paper Products", image: "/stationary.jpg" },
-    { id: "organizers", name: "Organizers", image: "/stationary.jpg" },
-    { id: "calculators", name: "Calculators", image: "/stationary.jpg" },
-    { id: "art", name: "Art Supplies", image: "/stationary.jpg" },
-    { id: "accessories", name: "Accessories", image: "/stationary.jpg" },
+    {
+      id: "all",
+      name: "All Stationery",
+      image: "/stationary.jpg",
+      address: "market",
+    },
+    {
+      id: "notebooks",
+      name: "Notebooks & Journals",
+      image: "/stationary.jpg",
+      address: "market",
+    },
+    {
+      id: "pens",
+      name: "Pens & Markers",
+      image: "/stationary.jpg",
+      address: "market",
+    },
+    {
+      id: "pencils",
+      name: "Pencils & Drawing",
+      image: "/stationary.jpg",
+      address: "market",
+    },
+    {
+      id: "paper",
+      name: "Paper Products",
+      image: "/stationary.jpg",
+      address: "market",
+    },
+    {
+      id: "organizers",
+      name: "Organizers",
+      image: "/stationary.jpg",
+      address: "market",
+    },
+    {
+      id: "calculators",
+      name: "Calculators",
+      image: "/stationary.jpg",
+      address: "market",
+    },
+    {
+      id: "art",
+      name: "Art Supplies",
+      image: "/stationary.jpg",
+      address: "market",
+    },
+    {
+      id: "accessories",
+      name: "Accessories",
+      image: "/stationary.jpg",
+      address: "market",
+    },
   ];
 
   if (isLoading) {

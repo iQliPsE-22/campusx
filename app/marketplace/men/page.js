@@ -184,14 +184,24 @@ const MenPage = () => {
 
   // Categories for filter
   const categories = [
-    { id: "all", name: "All Items", image: "/men.jpg" },
-    { id: "tshirts", name: "T-Shirts", image: "/men.jpg" },
-    { id: "shirts", name: "Shirts", image: "/men.jpg" },
-    { id: "jeans", name: "Jeans & Pants", image: "/men.jpg" },
-    { id: "hoodies", name: "Hoodies", image: "/men.jpg" },
-    { id: "jackets", name: "Jackets", image: "/men.jpg" },
-    { id: "shoes", name: "Shoes", image: "/men.jpg" },
-    { id: "accessories", name: "Accessories", image: "/men.jpg" },
+    { id: "all", name: "All Items", image: "/men.jpg", address: "market" },
+    { id: "tshirts", name: "T-Shirts", image: "/men.jpg", address: "market" },
+    { id: "shirts", name: "Shirts", image: "/men.jpg", address: "market" },
+    {
+      id: "jeans",
+      name: "Jeans & Pants",
+      image: "/men.jpg",
+      address: "market",
+    },
+    { id: "hoodies", name: "Hoodies", image: "/men.jpg", address: "market" },
+    { id: "jackets", name: "Jackets", image: "/men.jpg", address: "market" },
+    { id: "shoes", name: "Shoes", image: "/men.jpg", address: "market" },
+    {
+      id: "accessories",
+      name: "Accessories",
+      image: "/men.jpg",
+      address: "market",
+    },
   ];
 
   if (isLoading) {

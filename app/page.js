@@ -13,7 +13,7 @@ const heroBlocks = [
     textColor: "text-[#ffd867]",
     bgColor: "bg-white/5",
     accent: "#ffd867",
-    url: "/assignments",
+    url: "/projects",
   },
   {
     img: "/shopping.svg",

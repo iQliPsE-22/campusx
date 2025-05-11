@@ -32,7 +32,7 @@ export const projectCategories = [
         reviews: 65,
       },
       {
-        id: "exp1",
+        id: "exp3",
         name: "Dr. Rajesh Kumar",
         title: "Computer Science Professor",
         specialty: "programming",
@@ -75,7 +75,7 @@ export const projectCategories = [
         reviews: 29,
       },
       {
-        id: "dev2",
+        id: "dev3",
         name: "Sneha Reddy",
         title: "Mobile App Developer",
         specialty: "mobile",
@@ -116,7 +116,7 @@ export const projectCategories = [
         reviews: 24,
       },
       {
-        id: "proj2",
+        id: "proj3",
         title: "AI-Powered Chatbot for Customer Support",
         category: "Machine Learning",
         price: 2000,
