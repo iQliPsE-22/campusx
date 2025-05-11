@@ -1,20 +1,20 @@
-"use client"
-import { useState } from "react"
-import Link from "next/link"
-import { ArrowRight, Search, Calendar, Key } from "lucide-react"
+"use client";
+import { useState } from "react";
+import Link from "next/link";
+import { ArrowRight, Search, Calendar, Key } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { PageHero } from "@/custom-components/ui/page-hero"
-import { SectionHeader } from "@/custom-components/ui/section-header"
-import { FeatureCard } from "@/custom-components/ui/feature-card"
-import { TestimonialCard } from "@/custom-components/ui/testimonial-card"
-import { CTASection } from "@/custom-components/ui/cta-section"
-import { FeaturedRentalCard } from "@/custom-components/rentals/featured-rental-card"
-import { rentalCategories, rentalTestimonials } from "@/data/rentals-data"
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { PageHero } from "@/custom-components/ui/page-hero";
+import { SectionHeader } from "@/custom-components/ui/section-header";
+import { FeatureCard } from "@/custom-components/ui/feature-card";
+import { TestimonialCard } from "@/custom-components/ui/testimonial-card";
+import { CTASection } from "@/custom-components/ui/cta-section";
+import { FeaturedRentalCard } from "@/custom-components/rentals/featured-rental-card";
+import { rentalCategories, rentalTestimonials } from "@/data/rentals-data";
 
 export default function RentalsPage() {
-  const [activeTab, setActiveTab] = useState("all")
+  const [activeTab, setActiveTab] = useState("all");
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -23,11 +23,12 @@ export default function RentalsPage() {
         heading="RENTALS"
         text="Find the Perfect Space, Ride, or Gear for Your Campus Life"
         backgroundImage="/properties.jpg"
-        actions={rentalCategories.map((category) => ({
-          label: category.name,
-          icon: category.icon,
-          href: category.address,
-        }))}
+        // actions={rentalCategories.map((category) => ({
+        //   label: category.name,
+        //   icon: category.icon,
+        //   href: category.address,
+        // }))}
+        popularSearches={["Bikes", "Apartments", "Cars", "Cameras"]}
       />
 
       {/* Featured Rentals Section */}
@@ -35,7 +36,11 @@ export default function RentalsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader title="FEATURED RENTALS" />
 
-          <Tabs defaultValue="all" className="w-full" onValueChange={setActiveTab}>
+          <Tabs
+            defaultValue="all"
+            className="w-full"
+            onValueChange={setActiveTab}
+          >
             <TabsList className="w-full max-w-md mx-auto mb-8 bg-gray-800">
               <TabsTrigger value="all" className="flex-1">
                 All Rentals
@@ -67,9 +72,13 @@ export default function RentalsPage() {
                     </Link>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
                     {category.featured.map((item) => (
-                      <FeaturedRentalCard key={item.id} item={item} category={category.id} />
+                      <FeaturedRentalCard
+                        key={item.id}
+                        item={item}
+                        category={category.id}
+                      />
                     ))}
                   </div>
                 </div>
@@ -77,20 +86,31 @@ export default function RentalsPage() {
             </TabsContent>
 
             {rentalCategories.map((category) => (
-              <TabsContent key={category.id} value={category.id} className="space-y-6">
+              <TabsContent
+                key={category.id}
+                value={category.id}
+                className="space-y-6"
+              >
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-xl font-semibold flex items-center">
                     {category.icon}
                     <span className="ml-2">{category.name}</span>
                   </h3>
-                  <Link href={category.address} className="text-blue-400 hover:text-blue-300 flex items-center text-sm">
+                  <Link
+                    href={category.address}
+                    className="text-blue-400 hover:text-blue-300 flex items-center text-sm"
+                  >
                     View All <ArrowRight className="h-4 w-4 ml-1" />
                   </Link>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {category.featured.map((item) => (
-                    <FeaturedRentalCard key={item.id} item={item} category={category.id} />
+                    <FeaturedRentalCard
+                      key={item.id}
+                      item={item}
+                      category={category.id}
+                    />
                   ))}
                 </div>
 
@@ -159,5 +179,5 @@ export default function RentalsPage() {
         }}
       />
     </div>
-  )
+  );
 }

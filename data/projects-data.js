@@ -1,4 +1,4 @@
-import { GraduationCap, Code, BookOpen } from "lucide-react"
+import { GraduationCap, Code, BookOpen } from "lucide-react";
 
 export const projectCategories = [
   {
@@ -31,6 +31,17 @@ export const projectCategories = [
         rating: 4.8,
         reviews: 65,
       },
+      {
+        id: "exp1",
+        name: "Dr. Rajesh Kumar",
+        title: "Computer Science Professor",
+        specialty: "programming",
+        rate: 1500,
+        image: "/expert.jpg",
+        experience: "15+ years",
+        rating: 4.9,
+        reviews: 87,
+      },
     ],
   },
   {
@@ -51,6 +62,17 @@ export const projectCategories = [
         experience: "5+ years",
         rating: 4.8,
         reviews: 32,
+      },
+      {
+        id: "dev2",
+        name: "Sneha Reddy",
+        title: "Mobile App Developer",
+        specialty: "mobile",
+        rate: 900,
+        image: "/developer.jpg",
+        experience: "4+ years",
+        rating: 4.7,
+        reviews: 29,
       },
       {
         id: "dev2",
@@ -93,9 +115,19 @@ export const projectCategories = [
         rating: 4.8,
         reviews: 24,
       },
+      {
+        id: "proj2",
+        title: "AI-Powered Chatbot for Customer Support",
+        category: "Machine Learning",
+        price: 2000,
+        image: "/project.jpg",
+        complexity: "Intermediate",
+        rating: 4.8,
+        reviews: 24,
+      },
     ],
   },
-]
+];
 
 export const projectTestimonials = [
   {
@@ -125,4 +157,4 @@ export const projectTestimonials = [
       "The project I purchased from the library saved me weeks of work and helped me secure an internship at a top tech company.",
     rating: 4,
   },
-]
+];

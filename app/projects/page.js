@@ -23,11 +23,12 @@ export default function ProjectsPage() {
         heading="ASSIGNMENTS"
         text="Collaborate, Learn, Deliver — Your Assignment Hub!"
         backgroundImage="/project.jpg"
-        actions={projectCategories.map((category) => ({
-          label: category.name,
-          icon: category.icon,
-          href: category.address,
-        }))}
+        // actions={projectCategories.map((category) => ({
+        //   label: category.name,
+        //   icon: category.icon,
+        //   href: category.address,
+        // }))}
+        popularSearches={["Web Development", "Data Science", "Machine Learning", "AI Projects"]}
       />
 
       {/* Featured Services Section */}
@@ -71,7 +72,7 @@ export default function ProjectsPage() {
                     </Link>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {category.featured.map((item) => (
                       <FeaturedServiceCard
                         key={item.id}

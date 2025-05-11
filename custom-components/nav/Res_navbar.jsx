@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { FaUser, FaHome, FaShoppingCart } from "react-icons/fa";
+import { LayoutDashboard } from "lucide-react";
 import { MdCategory } from "react-icons/md";
 import ResCategoryMenu from "./Res_category_menu";
 
@@ -36,6 +37,17 @@ export default function ResNavbar() {
               <MdCategory className="w-4 h-4 mb-1" />
               Categories
             </button>
+          </li>
+       
+          {/* Dashboard */}
+          <li>
+            <Link
+              href="/dashboard"
+              className="flex flex-col items-center text-xs text-gray-300 hover:text-white transition-colors"
+            >
+              <LayoutDashboard className="w-4 h-4 mb-1" />
+              Dashboard
+            </Link>
           </li>
           {/* Login */}
           <li>

@@ -7,7 +7,7 @@ export function FeaturedServiceCard({ item, category }) {
   return (
     <Link
       href={`/projects/${category}/${item.id}`}
-      className="group bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-blue-500 transition-all hover:shadow-lg hover:shadow-blue-500/10"
+      className="group max-w-100 bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-blue-500 transition-all hover:shadow-lg hover:shadow-blue-500/10"
     >
       <div className="relative h-48">
         <Image src={item.image || "/placeholder.svg"} alt={item.title || item.name} fill className="object-cover" />

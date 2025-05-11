@@ -17,124 +17,14 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Headline from "@/custom-components/Headline";
-import { CTASection } from '@/custom-components/ui/cta-section';
-
-const categories = [
-  {
-    id: "men",
-    name: "Men's Fashion",
-    image: "/men.jpg",
-    address: "/marketplace/men",
-    description: "Stylish apparel and accessories for men",
-  },
-  {
-    id: "women",
-    name: "Women's Fashion",
-    image: "/women.jpg",
-    address: "/marketplace/women",
-    description: "Trendy clothing and accessories for women",
-  },
-  {
-    id: "electronics",
-    name: "Electronics",
-    image: "/electronics.jpg",
-    address: "/marketplace/electronics",
-    description: "Gadgets, devices, and tech accessories",
-  },
-  {
-    id: "stationary",
-    name: "Stationery",
-    image: "/stationary.jpg",
-    address: "/marketplace/stationary",
-    description: "School and office supplies",
-  },
-];
-
-const topDeals = [
-  {
-    id: "deal1",
-    title: "Apple MacBook Air",
-    discount: "15% OFF",
-    category: "Electronics",
-    image: "/electronics.jpg",
-    originalPrice: 92000,
-    discountedPrice: 78200,
-  },
-  {
-    id: "deal2",
-    title: "Nike Air Zoom Pegasus",
-    discount: "20% OFF",
-    category: "Men's Fashion",
-    image: "/men.jpg",
-    originalPrice: 12000,
-    discountedPrice: 9600,
-  },
-  {
-    id: "deal3",
-    title: "Sony WH-1000XM4 Headphones",
-    discount: "25% OFF",
-    category: "Electronics",
-    image: "/electronics.jpg",
-    originalPrice: 29990,
-    discountedPrice: 22490,
-  },
-];
-
-const trendingItems = [
-  {
-    id: "trend1",
-    title: "Smart Watch Series 5",
-    image: "/electronics.jpg",
-    price: 18999,
-    category: "Electronics",
-    rating: 4.7,
-  },
-  {
-    id: "trend2",
-    title: "Leather Messenger Bag",
-    image: "/men.jpg",
-    price: 3499,
-    category: "Men's Fashion",
-    rating: 4.5,
-  },
-  {
-    id: "trend3",
-    title: "Wireless Earbuds Pro",
-    image: "/electronics.jpg",
-    price: 7999,
-    category: "Electronics",
-    rating: 4.8,
-  },
-  {
-    id: "trend4",
-    title: "Casual Summer Dress",
-    image: "/women.jpg",
-    price: 2499,
-    category: "Women's Fashion",
-    rating: 4.6,
-  },
-];
-
-const featuredCategories = [
-  {
-    name: "Campus Essentials",
-    image: "/stationary.jpg",
-    count: 24,
-    items: ["Notebooks", "Backpacks", "Pens", "Calculators"],
-  },
-  {
-    name: "Tech Gadgets",
-    image: "/electronics.jpg",
-    count: 42,
-    items: ["Headphones", "Power Banks", "Webcams", "Speakers"],
-  },
-  {
-    name: "Dorm Decor",
-    image: "/women.jpg",
-    count: 18,
-    items: ["Posters", "Lights", "Storage", "Plants"],
-  },
-];
+import { CTASection } from "@/custom-components/ui/cta-section";
+import { PageHero } from "@/custom-components/ui/page-hero";
+import {
+  marketCategories as categories,
+  topDeals,
+  trendingItems,
+  featuredCategories,
+} from "@/data/marketplace";
 
 export default function MarketplacePage() {
   const [isSearchVisible, setIsSearchVisible] = useState(false);
@@ -178,71 +68,21 @@ export default function MarketplacePage() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
-      <section className="relative py-24">
-        <div className="absolute inset-0 z-0 opacity-30">
-          <Image
-            src="/electronics.jpg"
-            alt="Marketplace background"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black to-black/70"></div>
-        </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            className="text-center"
-            initial="hidden"
-            animate="visible"
-            variants={fadeInUp}
-          >
-            <Headline
-              heading="MARKETPLACE"
-              text="Trade Smart, Shop Easy — Your Campus Marketplace Awaits!"
-              className="text-3xl lg:text-5xl mb-8"
-            />
-
-            <div className="max-w-2xl mx-auto mt-8">
-              <form onSubmit={handleSearch} className="relative">
-                <Input
-                  type="text"
-                  placeholder="Search for products, categories, or brands..."
-                  className="h-14 pl-12 pr-4 bg-white/10 backdrop-blur-sm border-gray-700 rounded-lg text-white focus:border-blue-500 focus:ring-blue-500 placeholder:text-gray-400"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-                <Button
-                  type="submit"
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 h-10 bg-blue-600 hover:bg-blue-700"
-                >
-                  Search
-                </Button>
-              </form>
-
-              <div className="flex flex-wrap justify-center mt-4 gap-2">
-                <span className="text-gray-400 text-sm">Popular:</span>
-                {[
-                  "Headphones",
-                  "Textbooks",
-                  "Winter Clothing",
-                  "Dorm Essentials",
-                ].map((tag) => (
-                  <button
-                    key={tag}
-                    className="text-sm text-gray-300 hover:text-white bg-white/10 hover:bg-white/20 px-3 py-1 rounded-full transition"
-                    onClick={() => setSearchQuery(tag)}
-                  >
-                    {tag}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
+      <PageHero
+        heading="MARKETPLACE"
+        text="Trade Smart, Shop Easy — Your Campus Marketplace Awaits!"
+        backgroundImage="/electronics.jpg"
+        popularSearches={[
+          "Headphones",
+          "Textbooks",
+          "Winter Clothing",
+          "Dorm Essentials",
+        ]}
+        searchValue={searchQuery}
+        onSearchChange={setSearchQuery}
+        onSearch={handleSearch}
+      />
       {/* Main Categories Section */}
       <section className="py-16 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -483,7 +323,7 @@ export default function MarketplacePage() {
       </section>
 
       {/* CTA Section */}
-    
+
       <CTASection
         title="Ready to start selling?"
         description="Got items you no longer need? List them on CampusX Marketplace and

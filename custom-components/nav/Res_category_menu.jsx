@@ -22,6 +22,7 @@ const categories = [
     link: "/projects",
     icon: <AiOutlineProject className="w-6 h-6" />,
   },
+  
 ];
 
 export default function ResCategoryMenu() {
