@@ -13,9 +13,9 @@ import {
   Tag,
 } from "lucide-react";
 import Link from "next/link";
-import PageHeader from "./../../../custom-components/PageHeader";
-import Loading from "./../../../custom-components/Loading";
-import ShopByCategory from "./../../../custom-components/ShopByCategory";
+import Loading from "@/custom-components/Loading";
+import ShopByCategory from "@/custom-components/ShopByCategory";
+import { PageHero } from "@/custom-components/ui/page-hero";
 
 const MenPage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -211,15 +211,15 @@ const MenPage = () => {
   return (
     <section className="bg-black text-white min-h-dvh">
       {/* Hero Banner */}
-      <PageHeader
-        imageSrc="/men.jpg"
-        title="MEN'S FASHION"
-        titleAccent="M"
-        subtitle="Elevate your campus style with our premium collection"
-        primaryBtnText="Trending Now"
-        primaryBtnLink="#trending"
-        secondaryBtnText="Shop All"
-        secondaryBtnLink="#all-products"
+
+      <PageHero
+        heading="MEN'S FASHION"
+        text="Elevate your campus style with our premium collection"
+        backgroundImage="/men.jpg"
+        popularSearches={["Hoodies", "Shirst", "Jeans", "Dorm Essentials"]}
+        // searchValue={searchQuery}
+        // onSearchChange={setSearchQuery}
+        // onSearch={handleSearch}
       />
       {/* Trending Section */}
       <div id="trending" className="py-16 px-4 md:px-8 max-w-7xl mx-auto">

@@ -1,13 +1,14 @@
-"use client"
+"use client";
 
-import Headline from "@/custom-components/Headline"
-import { useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { Star, Code, Clock, Briefcase, MessageSquare } from "lucide-react"
+import Headline from "@/custom-components/Headline";
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Star, Code, Clock, Briefcase, MessageSquare } from "lucide-react";
+import { PageHero } from "@/custom-components/ui/page-hero";
 
 const ConnectDeveloperPage = () => {
-  const [filter, setFilter] = useState("all")
+  const [filter, setFilter] = useState("all");
 
   const developers = [
     {
@@ -100,25 +101,33 @@ const ConnectDeveloperPage = () => {
       rating: 4.7,
       reviews: 19,
     },
-  ]
+  ];
 
-  const filteredDevelopers = filter === "all" ? developers : developers.filter((dev) => dev.specialty === filter)
+  const filteredDevelopers =
+    filter === "all"
+      ? developers
+      : developers.filter((dev) => dev.specialty === filter);
 
   return (
-    <section className="bg-black text-white min-h-dvh py-16 px-4 md:px-8">
-      <div className="max-w-7xl mx-auto">
-        <Headline
-          text="Find the Perfect Developer for Your Project"
-          heading="CONNECT WITH DEVELOPERS"
-          className="text-3xl lg:text-5xl"
-        />
-
+    <section className="bg-black text-white min-h-dvh py-16">
+      <PageHero
+        heading="CONNECT WITH DEVELOPERS"
+        text="Find the Perfect Developer for Your Project"
+        backgroundImage="/developer.jpg"
+        popularSearches={["Camera", "Calculator", "Mobiles", "Chargers"]}
+        // searchValue={searchQuery}
+        // onSearchChange={setSearchQuery}
+        // onSearch={handleSearch}
+      />
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="mt-8 mb-12 flex justify-center">
           <div className="inline-flex bg-gray-800 rounded-lg p-1 flex-wrap justify-center">
             <button
               onClick={() => setFilter("all")}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                filter === "all" ? "bg-blue-600 text-white" : "text-gray-300 hover:text-white"
+                filter === "all"
+                  ? "bg-blue-600 text-white"
+                  : "text-gray-300 hover:text-white"
               }`}
             >
               All Developers
@@ -126,7 +135,9 @@ const ConnectDeveloperPage = () => {
             <button
               onClick={() => setFilter("web")}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                filter === "web" ? "bg-blue-600 text-white" : "text-gray-300 hover:text-white"
+                filter === "web"
+                  ? "bg-blue-600 text-white"
+                  : "text-gray-300 hover:text-white"
               }`}
             >
               Web
@@ -134,7 +145,9 @@ const ConnectDeveloperPage = () => {
             <button
               onClick={() => setFilter("mobile")}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                filter === "mobile" ? "bg-blue-600 text-white" : "text-gray-300 hover:text-white"
+                filter === "mobile"
+                  ? "bg-blue-600 text-white"
+                  : "text-gray-300 hover:text-white"
               }`}
             >
               Mobile
@@ -142,7 +155,9 @@ const ConnectDeveloperPage = () => {
             <button
               onClick={() => setFilter("backend")}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                filter === "backend" ? "bg-blue-600 text-white" : "text-gray-300 hover:text-white"
+                filter === "backend"
+                  ? "bg-blue-600 text-white"
+                  : "text-gray-300 hover:text-white"
               }`}
             >
               Backend
@@ -150,7 +165,9 @@ const ConnectDeveloperPage = () => {
             <button
               onClick={() => setFilter("game")}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                filter === "game" ? "bg-blue-600 text-white" : "text-gray-300 hover:text-white"
+                filter === "game"
+                  ? "bg-blue-600 text-white"
+                  : "text-gray-300 hover:text-white"
               }`}
             >
               Game/AR/VR
@@ -163,7 +180,12 @@ const ConnectDeveloperPage = () => {
             <Link href={`/projects/connect-developer/${dev.id}`} key={dev.id}>
               <div className="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 hover:translate-y-[-4px]">
                 <div className="relative h-48 w-full">
-                  <Image src={dev.image || "/placeholder.svg"} alt={dev.name} fill className="object-cover" />
+                  <Image
+                    src={dev.image || "/placeholder.svg"}
+                    alt={dev.name}
+                    fill
+                    className="object-cover"
+                  />
                   <div className="absolute top-3 right-3 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                     ₹{dev.rate}/{dev.period}
                   </div>
@@ -175,7 +197,10 @@ const ConnectDeveloperPage = () => {
 
                   <div className="flex flex-wrap gap-2 mb-4">
                     {dev.skills.map((skill, index) => (
-                      <span key={index} className="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs">
+                      <span
+                        key={index}
+                        className="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs"
+                      >
                         {skill}
                       </span>
                     ))}
@@ -200,7 +225,9 @@ const ConnectDeveloperPage = () => {
                     <div className="flex items-center">
                       <Star className="h-4 w-4 text-yellow-400 mr-1 fill-yellow-400" />
                       <span className="text-sm font-medium">{dev.rating}</span>
-                      <span className="text-sm text-gray-400 ml-1">({dev.reviews} reviews)</span>
+                      <span className="text-sm text-gray-400 ml-1">
+                        ({dev.reviews} reviews)
+                      </span>
                     </div>
                     <div className="flex items-center text-blue-400 text-sm">
                       <MessageSquare className="h-4 w-4 mr-1" />
@@ -214,7 +241,7 @@ const ConnectDeveloperPage = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ConnectDeveloperPage
+export default ConnectDeveloperPage;

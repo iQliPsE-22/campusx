@@ -14,9 +14,9 @@ import {
   Zap,
 } from "lucide-react";
 import Link from "next/link";
-import PageHeader from "./../../../custom-components/PageHeader";
 import Loading from "./../../../custom-components/Loading";
 import ShopByCategory from "./../../../custom-components/ShopByCategory";
+import { PageHero } from "@/custom-components/ui/page-hero";
 
 const ElectronicsPage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -253,15 +253,14 @@ const ElectronicsPage = () => {
 
   return (
     <section className="bg-black text-white min-h-dvh">
-      <PageHeader
-        imageSrc="/electronics.jpg"
-        title="ELECTRONICS"
-        titleAccent="E"
-        subtitle="Find the Latest Tech at Student-Friendly Prices"
-        primaryBtnText="Trending Tech"
-        primaryBtnLink="#trending"
-        secondaryBtnText="Browse All"
-        secondaryBtnLink="#all-products"
+      <PageHero
+        heading="ELECTRONICS"
+        text="Find the Latest Tech at Student-Friendly Prices"
+        backgroundImage="/electronics.jpg"
+        popularSearches={["Camera", "Calculator", "Mobiles", "Chargers"]}
+        // searchValue={searchQuery}
+        // onSearchChange={setSearchQuery}
+        // onSearch={handleSearch}
       />
       <div className="bg-gradient-to-r from-blue-900/50 to-purple-900/50 py-8">
         <div className="max-w-7xl mx-auto px-4 md:px-8">

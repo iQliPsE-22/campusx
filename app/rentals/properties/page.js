@@ -1,13 +1,14 @@
-"use client"
+"use client";
 
-import Headline from "@/custom-components/Headline"
-import { useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { MapPin, BedDouble, Bath, Maximize, Star } from "lucide-react"
+import Headline from "@/custom-components/Headline";
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { MapPin, BedDouble, Bath, Maximize, Star } from "lucide-react";
+import { PageHero } from "@/custom-components/ui/page-hero";
 
 const PropertiesPage = () => {
-  const [filter, setFilter] = useState("all")
+  const [filter, setFilter] = useState("all");
 
   const properties = [
     {
@@ -88,21 +89,33 @@ const PropertiesPage = () => {
       rating: 4.4,
       reviews: 41,
     },
-  ]
+  ];
 
-  const filteredProperties = filter === "all" ? properties : properties.filter((property) => property.type === filter)
+  const filteredProperties =
+    filter === "all"
+      ? properties
+      : properties.filter((property) => property.type === filter);
 
   return (
-    <section className="bg-black text-white min-h-dvh py-16 px-4 md:px-8">
-      <div className="max-w-7xl mx-auto">
-        <Headline text="Find Your Perfect Student Housing" heading="PROPERTIES" className="text-3xl lg:text-5xl" />
-
+    <section className="bg-black text-white min-h-dvh py-16">
+      <PageHero
+        heading="PROPERTIES"
+        text="Find Your Perfect Student Housing"
+        backgroundImage="/properties.jpg"
+        popularSearches={["Camera", "Calculator", "Mobiles", "Chargers"]}
+        // searchValue={searchQuery}
+        // onSearchChange={setSearchQuery}
+        // onSearch={handleSearch}
+      />
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="mt-8 mb-12 flex justify-center">
           <div className="inline-flex bg-gray-800 rounded-lg p-1">
             <button
               onClick={() => setFilter("all")}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                filter === "all" ? "bg-blue-600 text-white" : "text-gray-300 hover:text-white"
+                filter === "all"
+                  ? "bg-blue-600 text-white"
+                  : "text-gray-300 hover:text-white"
               }`}
             >
               All
@@ -110,7 +123,9 @@ const PropertiesPage = () => {
             <button
               onClick={() => setFilter("apartment")}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                filter === "apartment" ? "bg-blue-600 text-white" : "text-gray-300 hover:text-white"
+                filter === "apartment"
+                  ? "bg-blue-600 text-white"
+                  : "text-gray-300 hover:text-white"
               }`}
             >
               Apartments
@@ -118,7 +133,9 @@ const PropertiesPage = () => {
             <button
               onClick={() => setFilter("shared")}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                filter === "shared" ? "bg-blue-600 text-white" : "text-gray-300 hover:text-white"
+                filter === "shared"
+                  ? "bg-blue-600 text-white"
+                  : "text-gray-300 hover:text-white"
               }`}
             >
               Shared Spaces
@@ -143,7 +160,9 @@ const PropertiesPage = () => {
                 </div>
 
                 <div className="p-5">
-                  <h3 className="text-lg font-semibold mb-2 line-clamp-1">{property.title}</h3>
+                  <h3 className="text-lg font-semibold mb-2 line-clamp-1">
+                    {property.title}
+                  </h3>
 
                   <div className="flex items-center text-gray-400 mb-3">
                     <MapPin className="h-4 w-4 mr-1" />
@@ -168,10 +187,16 @@ const PropertiesPage = () => {
                   <div className="flex items-center justify-between pt-3 border-t border-gray-800">
                     <div className="flex items-center">
                       <Star className="h-4 w-4 text-yellow-400 mr-1 fill-yellow-400" />
-                      <span className="text-sm font-medium">{property.rating}</span>
-                      <span className="text-sm text-gray-400 ml-1">({property.reviews} reviews)</span>
+                      <span className="text-sm font-medium">
+                        {property.rating}
+                      </span>
+                      <span className="text-sm text-gray-400 ml-1">
+                        ({property.reviews} reviews)
+                      </span>
                     </div>
-                    <span className="text-blue-400 text-sm">View Details →</span>
+                    <span className="text-blue-400 text-sm">
+                      View Details →
+                    </span>
                   </div>
                 </div>
               </div>
@@ -180,7 +205,7 @@ const PropertiesPage = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default PropertiesPage
+export default PropertiesPage;

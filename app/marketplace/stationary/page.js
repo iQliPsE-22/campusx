@@ -14,9 +14,9 @@ import {
   BookOpen,
 } from "lucide-react";
 import Link from "next/link";
-import PageHeader from "@/custom-components/PageHeader";
 import Loading from "@/custom-components/Loading";
 import ShopByCategory from "@/custom-components/ShopByCategory";
+import { PageHero } from '@/custom-components/ui/page-hero';
 
 const StationaryPage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -253,15 +253,14 @@ const StationaryPage = () => {
 
   return (
     <section className="bg-black text-white min-h-dvh">
-      <PageHeader
-        imageSrc="/stationary.jpg"
-        title="STATIONERY"
-        titleAccent="S"
-        subtitle="Quality Supplies for Academic Excellence"
-        primaryBtnText="Top Picks"
-        primaryBtnLink="#trending"
-        secondaryBtnText="Shop All"
-        secondaryBtnLink="#all-products"
+      <PageHero
+        heading="STATIONERY"
+        text="Quality Supplies for Academic Excellence"
+        backgroundImage="/stationary.jpg"
+        popularSearches={["Pens", "Photocopies", "Files", "Drawing"]}
+        // searchValue={searchQuery}
+        // onSearchChange={setSearchQuery}
+        // onSearch={handleSearch}
       />
       <div className="bg-gradient-to-r from-blue-900/50 to-indigo-900/50 py-8">
         <div className="max-w-7xl mx-auto px-4 md:px-8">

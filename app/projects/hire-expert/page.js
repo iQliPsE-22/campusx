@@ -1,13 +1,14 @@
-"use client"
+"use client";
 
-import Headline from "@/custom-components/Headline"
-import { useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { Star, Clock, Briefcase, Award, MessageSquare } from "lucide-react"
+import Headline from "@/custom-components/Headline";
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Star, Clock, Briefcase, Award, MessageSquare } from "lucide-react";
+import { PageHero } from "@/custom-components/ui/page-hero";
 
 const HireExpertPage = () => {
-  const [filter, setFilter] = useState("all")
+  const [filter, setFilter] = useState("all");
 
   const experts = [
     {
@@ -94,25 +95,33 @@ const HireExpertPage = () => {
       rating: 4.7,
       reviews: 48,
     },
-  ]
+  ];
 
-  const filteredExperts = filter === "all" ? experts : experts.filter((expert) => expert.specialty === filter)
+  const filteredExperts =
+    filter === "all"
+      ? experts
+      : experts.filter((expert) => expert.specialty === filter);
 
   return (
-    <section className="bg-black text-white min-h-dvh py-16 px-4 md:px-8">
-      <div className="max-w-7xl mx-auto">
-        <Headline
-          text="Connect with Top Academic and Industry Professionals"
-          heading="HIRE AN EXPERT"
-          className="text-3xl lg:text-5xl"
-        />
-
+    <section className="bg-black text-white min-h-dvh py-16 ">
+      <PageHero
+        heading="HIRE AN EXPERT"
+        text="Connect with Top Academic and Industry Professionals"
+        backgroundImage="/expert.jpg"
+        popularSearches={["Camera", "Calculator", "Mobiles", "Chargers"]}
+        // searchValue={searchQuery}
+        // onSearchChange={setSearchQuery}
+        // onSearch={handleSearch}
+      />
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="mt-8 mb-12 flex justify-center">
           <div className="inline-flex bg-gray-800 rounded-lg p-1">
             <button
               onClick={() => setFilter("all")}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                filter === "all" ? "bg-blue-600 text-white" : "text-gray-300 hover:text-white"
+                filter === "all"
+                  ? "bg-blue-600 text-white"
+                  : "text-gray-300 hover:text-white"
               }`}
             >
               All Experts
@@ -120,7 +129,9 @@ const HireExpertPage = () => {
             <button
               onClick={() => setFilter("programming")}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                filter === "programming" ? "bg-blue-600 text-white" : "text-gray-300 hover:text-white"
+                filter === "programming"
+                  ? "bg-blue-600 text-white"
+                  : "text-gray-300 hover:text-white"
               }`}
             >
               Programming
@@ -128,7 +139,9 @@ const HireExpertPage = () => {
             <button
               onClick={() => setFilter("data")}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                filter === "data" ? "bg-blue-600 text-white" : "text-gray-300 hover:text-white"
+                filter === "data"
+                  ? "bg-blue-600 text-white"
+                  : "text-gray-300 hover:text-white"
               }`}
             >
               Data Science
@@ -136,7 +149,9 @@ const HireExpertPage = () => {
             <button
               onClick={() => setFilter("business")}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                filter === "business" ? "bg-blue-600 text-white" : "text-gray-300 hover:text-white"
+                filter === "business"
+                  ? "bg-blue-600 text-white"
+                  : "text-gray-300 hover:text-white"
               }`}
             >
               Business
@@ -149,7 +164,12 @@ const HireExpertPage = () => {
             <Link href={`/projects/hire-expert/${expert.id}`} key={expert.id}>
               <div className="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 hover:translate-y-[-4px]">
                 <div className="relative h-48 w-full">
-                  <Image src={expert.image || "/placeholder.svg"} alt={expert.name} fill className="object-cover" />
+                  <Image
+                    src={expert.image || "/placeholder.svg"}
+                    alt={expert.name}
+                    fill
+                    className="object-cover"
+                  />
                   <div className="absolute top-3 right-3 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                     ₹{expert.rate}/{expert.period}
                   </div>
@@ -166,19 +186,27 @@ const HireExpertPage = () => {
                     </div>
                     <div className="flex items-center text-gray-300">
                       <Award className="h-4 w-4 mr-2" />
-                      <span className="text-sm">{expert.projects} Projects</span>
+                      <span className="text-sm">
+                        {expert.projects} Projects
+                      </span>
                     </div>
                     <div className="flex items-center text-gray-300 col-span-2">
                       <Clock className="h-4 w-4 mr-2" />
-                      <span className="text-sm">Response: {expert.response}</span>
+                      <span className="text-sm">
+                        Response: {expert.response}
+                      </span>
                     </div>
                   </div>
 
                   <div className="flex items-center justify-between pt-3 border-t border-gray-800">
                     <div className="flex items-center">
                       <Star className="h-4 w-4 text-yellow-400 mr-1 fill-yellow-400" />
-                      <span className="text-sm font-medium">{expert.rating}</span>
-                      <span className="text-sm text-gray-400 ml-1">({expert.reviews} reviews)</span>
+                      <span className="text-sm font-medium">
+                        {expert.rating}
+                      </span>
+                      <span className="text-sm text-gray-400 ml-1">
+                        ({expert.reviews} reviews)
+                      </span>
                     </div>
                     <div className="flex items-center text-blue-400 text-sm">
                       <MessageSquare className="h-4 w-4 mr-1" />
@@ -192,7 +220,7 @@ const HireExpertPage = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default HireExpertPage
+export default HireExpertPage;

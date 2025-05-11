@@ -13,9 +13,9 @@ import {
   Tag,
 } from "lucide-react";
 import Link from "next/link";
-import PageHeader from "@/custom-components/PageHeader";
 import Loading from "@/custom-components/Loading";
 import ShopByCategory from "@/custom-components/ShopByCategory";
+import { PageHero } from '@/custom-components/ui/page-hero';
 
 const WomenPage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -226,15 +226,14 @@ const WomenPage = () => {
 
   return (
     <section className="bg-black text-white min-h-dvh">
-      <PageHeader
-        imageSrc="/women.jpg"
-        title="WOMEN'S FASHION"
-        titleAccent="W"
-        subtitle="Discover the latest trends for your campus style"
-        primaryBtnText="Trending Now"
-        primaryBtnLink="#trending"
-        secondaryBtnText="Shop All"
-        secondaryBtnLink="#all-products"
+      <PageHero
+        heading="WOMEN'S FASHION"
+        text="Discover the latest trends for your campus style"
+        backgroundImage="/women.jpg"
+        popularSearches={["Jeans", "Tops", "shoes", "Earrings"]}
+        // searchValue={searchQuery}
+        // onSearchChange={setSearchQuery}
+        // onSearch={handleSearch}
       />
       <div id="trending" className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-8">

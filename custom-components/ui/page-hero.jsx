@@ -35,7 +35,7 @@ export function PageHero({
           src={backgroundImage || "/placeholder.svg"}
           alt="Background"
           fill
-          className="object-cover"
+          className="object-cover object-top"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black to-black/30 "></div>

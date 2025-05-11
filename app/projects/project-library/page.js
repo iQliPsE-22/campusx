@@ -1,5 +1,6 @@
 import Headline from "@/custom-components/Headline";
 import ProductCard from "@/custom-components/ProductCard";
+import { PageHero } from "@/custom-components/ui/page-hero";
 
 const ProjectLibrary = () => {
   const projects = [
@@ -27,9 +28,14 @@ const ProjectLibrary = () => {
 
   return (
     <section className="bg-black text-white h-full pt-4 lg:pt-10 px-4 pb-10 lg:px-10 min-h-screen">
-      <Headline
-        text="Enhance your resume with top-notch projects"
+      <PageHero
         heading="PROJECT LIBRARY"
+        text="Enhance your resume with top-notch projects"
+        backgroundImage="/project.jpg"
+        popularSearches={["Camera", "Calculator", "Mobiles", "Chargers"]}
+        // searchValue={searchQuery}
+        // onSearchChange={setSearchQuery}
+        // onSearch={handleSearch}
       />
       <div className="mt-8 lg:mt-6 p-4 lg:p-8 w-full flex flex-row justify-center gap-4">
         {projects.map((project, index) => (
