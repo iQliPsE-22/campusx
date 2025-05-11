@@ -1,0 +1,128 @@
+import { GraduationCap, Code, BookOpen } from "lucide-react"
+
+export const projectCategories = [
+  {
+    id: "hire-expert",
+    name: "Hire an Expert",
+    icon: <GraduationCap className="h-6 w-6" />,
+    image: "/expert.jpg",
+    address: "/projects/hire-expert",
+    description: "Connect with top academic and industry professionals",
+    featured: [
+      {
+        id: "exp1",
+        name: "Dr. Rajesh Kumar",
+        title: "Computer Science Professor",
+        specialty: "programming",
+        rate: 1500,
+        image: "/expert.jpg",
+        experience: "15+ years",
+        rating: 4.9,
+        reviews: 87,
+      },
+      {
+        id: "exp2",
+        name: "Priya Sharma",
+        title: "Data Science Specialist",
+        specialty: "data",
+        rate: 1200,
+        image: "/expert.jpg",
+        experience: "8+ years",
+        rating: 4.8,
+        reviews: 65,
+      },
+    ],
+  },
+  {
+    id: "connect-developer",
+    name: "Connect with a Developer",
+    icon: <Code className="h-6 w-6" />,
+    image: "/developer.jpg",
+    address: "/projects/connect-developer",
+    description: "Find the perfect developer for your project",
+    featured: [
+      {
+        id: "dev1",
+        name: "Arjun Mehta",
+        title: "Full Stack Developer",
+        specialty: "web",
+        rate: 800,
+        image: "/developer.jpg",
+        experience: "5+ years",
+        rating: 4.8,
+        reviews: 32,
+      },
+      {
+        id: "dev2",
+        name: "Sneha Reddy",
+        title: "Mobile App Developer",
+        specialty: "mobile",
+        rate: 900,
+        image: "/developer.jpg",
+        experience: "4+ years",
+        rating: 4.7,
+        reviews: 29,
+      },
+    ],
+  },
+  {
+    id: "project-library",
+    name: "Project Library",
+    icon: <BookOpen className="h-6 w-6" />,
+    image: "/project.jpg",
+    address: "/projects/project-library",
+    description: "Enhance your resume with top-notch projects",
+    featured: [
+      {
+        id: "proj1",
+        title: "E-commerce Platform with Advanced Analytics",
+        category: "Web Development",
+        price: 2500,
+        image: "/project.jpg",
+        complexity: "Advanced",
+        rating: 4.6,
+        reviews: 18,
+      },
+      {
+        id: "proj2",
+        title: "AI-Powered Chatbot for Customer Support",
+        category: "Machine Learning",
+        price: 2000,
+        image: "/project.jpg",
+        complexity: "Intermediate",
+        rating: 4.8,
+        reviews: 24,
+      },
+    ],
+  },
+]
+
+export const projectTestimonials = [
+  {
+    id: 1,
+    name: "Aditya Verma",
+    role: "Computer Science Student",
+    image: "/placeholder.svg?height=80&width=80",
+    quote:
+      "The expert I hired helped me understand complex algorithms that were crucial for my final project. Worth every penny!",
+    rating: 5,
+  },
+  {
+    id: 2,
+    name: "Meera Joshi",
+    role: "Business Major",
+    image: "/placeholder.svg?height=80&width=80",
+    quote:
+      "I connected with a developer who built my startup's MVP in just two weeks. The platform made it easy to find the right talent.",
+    rating: 5,
+  },
+  {
+    id: 3,
+    name: "Karan Malhotra",
+    role: "Engineering Student",
+    image: "/placeholder.svg?height=80&width=80",
+    quote:
+      "The project I purchased from the library saved me weeks of work and helped me secure an internship at a top tech company.",
+    rating: 4,
+  },
+]

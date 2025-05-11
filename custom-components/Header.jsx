@@ -73,12 +73,12 @@ export default function Header() {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <button
+            {/* <button
               onClick={() => setIsSearchOpen(!isSearchOpen)}
               className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-full transition"
             >
               <Search className="h-5 w-5" />
-            </button>
+            </button> */}
             <button className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-full transition">
               <Bell className="h-5 w-5" />
             </button>
@@ -87,7 +87,7 @@ export default function Header() {
             </button>
             <Link
               href="/login"
-              className="px-4 py-2 bg-blue-500 rounded-lg font-medium hover:brightness-90 transition"
+              className="px-4 py-2 bg-blue-500 text-sm rounded-lg font-medium hover:brightness-90 transition"
             >
               Login/Register
             </Link>

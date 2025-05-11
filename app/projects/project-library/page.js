@@ -1,5 +1,5 @@
-import Headline from "@/custom-components/Headline"
-import ProductCard from "@/custom-components/ProductCard"
+import Headline from "@/custom-components/Headline";
+import ProductCard from "@/custom-components/ProductCard";
 
 const ProjectLibrary = () => {
   const projects = [
@@ -23,18 +23,26 @@ const ProjectLibrary = () => {
       title: "E-commerce Platform with Advanced Analytics",
       price: "2500",
     },
-  ]
+  ];
 
   return (
     <section className="bg-black text-white h-full pt-4 lg:pt-10 px-4 pb-10 lg:px-10 min-h-screen">
-      <Headline text="Enhance your resume with top-notch projects" heading="PROJECT LIBRARY" />
-      <div className="mt-8 lg:mt-6 p-4 lg:p-8 w-full flex flex-wrap justify-center gap-4">
+      <Headline
+        text="Enhance your resume with top-notch projects"
+        heading="PROJECT LIBRARY"
+      />
+      <div className="mt-8 lg:mt-6 p-4 lg:p-8 w-full flex flex-row justify-center gap-4">
         {projects.map((project, index) => (
-          <ProductCard key={index} imgsrc={project.imgsrc} title={project.title} price={project.price} />
+          <ProductCard
+            key={index}
+            imgsrc={project.imgsrc}
+            title={project.title}
+            price={project.price}
+          />
         ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ProjectLibrary
+export default ProjectLibrary;

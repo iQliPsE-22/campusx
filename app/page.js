@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Headline from "@/custom-components/Headline";
-import HopBtn from "@/custom-components/HopBtn";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import Testimonial from "./../custom-components/Testimonial";
 import Link from "next/link";
@@ -37,6 +36,8 @@ const heroBlocks = [
     url: "/rentals",
   },
 ];
+
+
 
 export default function Home() {
   return (
@@ -116,20 +117,20 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-16 md:py-24 px-4 md:px-8">
         <div className="max-w-5xl mx-auto bg-gradient-to-r from-gray-900 to-black rounded-3xl p-8 md:p-12 text-center border border-white/10">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6">
             Ready to Transform Your Campus Experience?
           </h2>
-          <p className="text-lg lg:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+          <p className="text-base lg:text-lg text-gray-200 mb-8 max-w-2xl mx-auto">
             Join thousands of students who are already making the most of their
             college life with CampusX Space.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-white text-black hover:bg-gray-200 px-8 py-6 text-sm lg:text-lg font-semibold rounded-xl transition-all duration-300">
+            <Button className="bg-white text-black hover:bg-gray-200 px-8 py-6 text-sm lg:text-base font-semibold rounded-xl transition-all duration-300">
               Sign Up Now
             </Button>
             <Button
               variant="outline"
-              className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-sm lg:text-lg font-semibold rounded-xl transition-all duration-300"
+              className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-sm lg:text-base font-semibold rounded-xl transition-all duration-300"
             >
               Learn More
             </Button>
@@ -138,7 +139,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <Testimonial />
+      {/* <Testimonial testimonials = {testimonials}/> */}
     </main>
   );
 }
