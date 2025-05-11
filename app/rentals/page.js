@@ -12,6 +12,7 @@ import { TestimonialCard } from "@/custom-components/ui/testimonial-card";
 import { CTASection } from "@/custom-components/ui/cta-section";
 import { FeaturedRentalCard } from "@/custom-components/rentals/featured-rental-card";
 import { rentalCategories, rentalTestimonials } from "@/data/rentals-data";
+import ShopByCategory from "./../../custom-components/ShopByCategory";
 
 export default function RentalsPage() {
   const [activeTab, setActiveTab] = useState("all");
@@ -30,7 +31,9 @@ export default function RentalsPage() {
         // }))}
         popularSearches={["Bikes", "Apartments", "Cars", "Cameras"]}
       />
+      <ShopByCategory categories={rentalCategories} />
 
+      
       {/* Featured Rentals Section */}
       <section className="py-16 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,17 +44,17 @@ export default function RentalsPage() {
             className="w-full"
             onValueChange={setActiveTab}
           >
-            <TabsList className="w-full max-w-md mx-auto mb-8 bg-gray-800">
-              <TabsTrigger value="all" className="flex-1">
+            <TabsList className="hidden lg:flex w-full px-1 py-6 mb-8 bg-gray-800">
+              <TabsTrigger value="all" className="flex-1 p-5">
                 All Rentals
               </TabsTrigger>
-              <TabsTrigger value="properties" className="flex-1">
+              <TabsTrigger value="properties" className="flex-1 p-5">
                 Properties
               </TabsTrigger>
-              <TabsTrigger value="vehicles" className="flex-1">
+              <TabsTrigger value="vehicles" className="flex-1 p-5">
                 Vehicles
               </TabsTrigger>
-              <TabsTrigger value="electronics" className="flex-1">
+              <TabsTrigger value="electronics" className="flex-1 p-5">
                 Electronics
               </TabsTrigger>
             </TabsList>

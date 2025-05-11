@@ -208,7 +208,7 @@ const Page = () => {
                 <div className="relative my-6">
                   <Separator className="my-4" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="bg-gray-900 px-2 text-sm text-gray-500">
+                    <span className="bg-[#0d1119] px-2 text-sm text-gray-500">
                       OR CONTINUE WITH
                     </span>
                   </div>

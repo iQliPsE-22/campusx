@@ -12,6 +12,7 @@ import { TestimonialCard } from "@/custom-components/ui/testimonial-card";
 import { CTASection } from "@/custom-components/ui/cta-section";
 import { FeaturedServiceCard } from "@/custom-components/projects/featured-service-card";
 import { projectCategories, projectTestimonials } from "@/data/projects-data";
+import ShopByCategory from './../../custom-components/ShopByCategory';
 
 export default function ProjectsPage() {
   const [activeTab, setActiveTab] = useState("all");
@@ -30,7 +31,7 @@ export default function ProjectsPage() {
         // }))}
         popularSearches={["Web Development", "Data Science", "Machine Learning", "AI Projects"]}
       />
-
+      <ShopByCategory categories={projectCategories} />
       {/* Featured Services Section */}
       <section className="py-16 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,17 +42,17 @@ export default function ProjectsPage() {
             className="w-full"
             onValueChange={setActiveTab}
           >
-            <TabsList className="w-full max-w-md mx-auto mb-8 bg-gray-800">
-              <TabsTrigger value="all" className="flex-1">
+            <TabsList className="hidden lg:flex w-full px-1 py-6 mb-8 bg-gray-800">
+              <TabsTrigger value="all" className="flex-1 p-5">
                 All Services
               </TabsTrigger>
-              <TabsTrigger value="hire-expert" className="flex-1">
+              <TabsTrigger value="hire-expert" className="flex-1 p-5">
                 Experts
               </TabsTrigger>
-              <TabsTrigger value="connect-developer" className="flex-1">
+              <TabsTrigger value="connect-developer" className="flex-1 p-5">
                 Developers
               </TabsTrigger>
-              <TabsTrigger value="project-library" className="flex-1">
+              <TabsTrigger value="project-library" className="flex-1 p-5">
                 Projects
               </TabsTrigger>
             </TabsList>

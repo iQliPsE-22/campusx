@@ -44,7 +44,7 @@ export default function Header() {
     path === "/" ? pathname === "/" : pathname.startsWith(path);
 
   return (
-    <header className="w-full text-gray-200 border-b border-gray-700 sticky top-0 z-50">
+    <header className="w-full bg-black text-gray-200 border-b border-gray-700 sticky top-0 z-50">
       <div className="flex justify-between items-center h-16 px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center">
