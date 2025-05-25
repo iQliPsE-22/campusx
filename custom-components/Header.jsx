@@ -49,7 +49,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <h1 className="audiowide text-xl lg:text-2xl text-white">
-            <span className="text-blue-500">C</span>AMPUSX
+            <span className="text-blue-500">R</span>osat & Co.
           </h1>
         </Link>
 

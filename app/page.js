@@ -1,9 +1,13 @@
+
+'use client';
+import {useState} from 'react';
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Headline from "@/custom-components/Headline";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import Testimonial from "./../custom-components/Testimonial";
 import Link from "next/link";
+
 const heroBlocks = [
   {
     img: "/students.svg",
@@ -40,6 +44,7 @@ const heroBlocks = [
 
 
 export default function Home() {
+  const [activeTab,setActiveTab] = useState(0);
   return (
     <main className="min-h-screen bg-black overflow-hidden">
       {/* Hero Section */}
@@ -48,8 +53,8 @@ export default function Home() {
 
         <div className="w-full lg:w-1/2 relative z-10 flex flex-col items-center space-y-8 text-center animate-fadeIn">
           <Headline
-            heading="CAMPUSX SPACE"
-            text="Assignments, Trades, and Rentals — All in One Place!"
+            heading="Roast & Co."
+            text="Gather ’round deals & deadlines.."
             className="text-3xl lg:text-5xl"
           />
 
@@ -113,7 +118,7 @@ export default function Home() {
           </div>
         </section>
       ))}
-
+    
       {/* CTA Section */}
       <section className="py-16 md:py-24 px-4 md:px-8">
         <div className="max-w-5xl mx-auto bg-gradient-to-r from-gray-900 to-black rounded-3xl p-8 md:p-12 text-center border border-white/10">
