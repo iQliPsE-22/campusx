@@ -74,13 +74,36 @@ const Page = () => {
     if (!validateForm()) return;
 
     setIsLoading(true);
+    try {
+      const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Simulate API call
-    setTimeout(() => {
+      if (!response.ok) {
+        const errorData = await response.json();
+        setFormErrors({
+          email: errorData.error || "Login failed",
+          password: undefined,
+        });
+      } else {
+        const data = await response.json();
+        // Handle successful login, e.g., redirect or show success message
+        console.log("Login successful:", data);
+        router.push("/");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      setFormErrors({
+        email: "An unexpected error occurred",
+        password: undefined,
+      });
+    } finally {
       setIsLoading(false);
-      router.push("/");
-      // In a real app, you'd handle login logic here
-    }, 1500);
+    }
   };
 
   return (
