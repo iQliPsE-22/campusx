@@ -5,8 +5,8 @@ import bcrypt from "bcryptjs";
 
 export async function POST(req) {
   try {
-    const { email, password } = await req.json();
-    if (!email || !password) {
+    const { name, email, password } = await req.json();
+    if (!name || !email || !password) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
 
@@ -25,6 +25,7 @@ export async function POST(req) {
 
     // insert user
     const result = await db.collection("users").insertOne({
+      name,
       email,
       password: hashPwd,
       createdAt: new Date(),

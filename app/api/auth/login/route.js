@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getDb } from "@/lib/mongodb";
 import bcrypt from "bcryptjs";
+import jwt  from "jsonwebtoken";
 export async function POST(req) {
   try {
     const { email, password } = await req.json();
@@ -16,7 +17,12 @@ export async function POST(req) {
     if (!isValid) {
       return NextResponse.json({ error: "Invalid password" }, { status: 401 });
     }
-    return NextResponse.json({ ok: true, userId: user._id });
+    const token = jwt.sign(
+      { id: user._id, email: user.email },
+      process.env.JWT_SECRET,
+      { expiresIn: "2h" }
+    );
+    return NextResponse.json({ ok: true, token });
   } catch (err) {
     console.error(err);
     return NextResponse.json({ error: "Server error" }, { status: 500 });

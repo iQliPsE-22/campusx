@@ -92,6 +92,7 @@ const Page = () => {
       } else {
         const data = await response.json();
         // Handle successful login, e.g., redirect or show success message
+        console.log("Login successful:", data);
         router.push("/");
       }
     } catch (error) {
